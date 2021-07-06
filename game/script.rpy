@@ -3,6 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+# Commit test pls ignore - Cyn
+
 define p = Character("Peyton Protagonist")
 define r = Character("Rain Roommate")
 define a = Character("Alex Alien")
@@ -72,7 +74,7 @@ label start:
     scene bg bedroom
 
     $ restart_loop()
-    
+
     "Feel like I barely got any sleep, but it's definitely morning now."
 
     "Guess I should go and see what the damage is."
