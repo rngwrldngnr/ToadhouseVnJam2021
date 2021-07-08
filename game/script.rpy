@@ -3,10 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define p = Character("Peyton Protagonist")
-define r = Character("Rain Roommate")
-define a = Character("Alex Alien")
-define f = Character("Farah Friendo")
+define p = Character(_("Protagonist"), color="FFC8C8")
+define r = Character(_("Roommate"), color="C8FFC8")
+define a = Character(_("Alien"), color="FFFFFF")
+define f = Character(_("Friend"), color="C8C8FF")
 
 default inventory = dict()
 default knowledgeBase = dict()
@@ -15,6 +15,13 @@ default schedule.clockTime = "08:17 AM"
 default inv.charge = False
 default inv.has_key = False
 default knows_key_location = False
+
+default calc.hour = 60
+default calc.clockMax = 12
+default calc.halfDay = calc.hour * calc.clockMax
+
+default test.charZoom = .5
+default test.level = 1.0
 
 init python:
     import re
@@ -30,18 +37,15 @@ init python:
 
     def update_clock_time():
         calcTime = schedule.rawTime
-        hour = 60
-        clockMax = 12
-        halfDay = hour * clockMax
-        if calcTime >= halfDay:
-            calcTime - halfDay
+        if calcTime >= calc.halfDay:
+            calcTime - calc.halfDay
             letters = "PM"
         else:
             letters = "AM"
-        hours = calcTime / hour
-        minutes = calcTime % hour
+        hours = calcTime // calc.hour
+        minutes = calcTime % calc.hour
         if hours == 0:
-            hours = clockMax
+            hours = calc.clockMax
         schedule.clockTime = "{0:02d}:{1:02d} {2}".format(hours, minutes, letters)
 
     def add_minutes(numMinutes):
@@ -52,7 +56,7 @@ init python:
         hours, minutes, letters = re.split("[: ]", clockTimeToCheck)
         calcTime = (int(hours) * 60) + int(minutes)
         if letters.upper() == "PM":
-            calcTime += 12 * 60
+            calcTime += calc.halfDay
         return schedule.rawTime < calcTime
 
 screen clock_screen():
@@ -60,7 +64,8 @@ screen clock_screen():
         xalign 0 yalign 0
         text "[schedule.clockTime]":
             color "ff0000"
-            size 36
+            font "./gui/fonts/CourierPrime-Regular.ttf"
+            size 2 * gui.text_size
 
 # The game starts here.
 label start:
@@ -72,7 +77,7 @@ label start:
     scene bg bedroom
 
     $ restart_loop()
-    
+
     "Feel like I barely got any sleep, but it's definitely morning now."
 
     "Guess I should go and see what the damage is."
@@ -81,9 +86,8 @@ label start:
 
     "The door's locked."
 
-    "The current time is [schedule.clockTime]."
-
     show screen clock_screen()
+    "The current time is [schedule.clockTime]."
 
     $ key_location_set = set()
 
@@ -93,12 +97,12 @@ label check_bedroom:
         set key_location_set
         "Where should I look?"
 
-        "Check the bedding" if not knows_key_location:
-            $ add_minutes(3)
+        "Check the bedding":
+            $ add_minutes(4)
             "Nothing in the sheets or under the pillow.{w=1.5} Not even some change from the key fairy."
             jump check_bedroom
 
-        "Check under the bed" if not knows_key_location:
+        "Check under the bed":
             $ add_minutes(2)
             "Wow! So many childhod memories! {w=1.5}Nothing of material interest though."
             jump check_bedroom
@@ -125,22 +129,24 @@ label check_bedroom:
             jump check_bedroom
 
         "Leave the room" if inv.has_key:
-            jump kitchen
+            jump home
+
 
 # Sections to jump to from search menu
 label check_nightstand:
     $ add_minutes(1)
-    p "I found my phone. Unfortunately the battery is dead. I was awake enough to attach it to the charger, but not awake enough to actuall plug the charger into the wall."
+    p "I found my phone. Unfortunately the battery is dead. I was awake enough to attach it to the charger, but not awake enough to actually plug the charger into the wall."
 
     menu:
         "Charge phone":
             $ inv.charge = True
             $ add_minutes(20)
             p "Okay my phone is charged."
-            jump menu_bedroom
 
         "Not right now":
-            jump menu_bedroom
+            pass
+
+    jump check_bedroom
 
 label check_closet:
     "The closet is messy, with a piles of dirty close and full bins of unsorted laundry."
@@ -151,27 +157,58 @@ label check_closet:
     $ knows_key_location = True
     jump menu_bedroom
 
-label kitchen:
-    scene bg kitchen
+label home:
+    scene bg home
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    if before("8:30 AM"):
-        show Rain Roommate angry
-        r "We need to talk!"
-        return
-
-    else:
-        " Rain's gone, but there's a note"
+    if not before("8:30 AM"):
+        "_ROOMMATE_'s gone, but there's a note"
         show note
         r "How could you have done this?! Fix it and apologize or one of us is moving out!"
-        "What could I have done to upset Rain so badly?"
+        "What could I have done to upset _ROOMMATE_ so badly?"
         "And why do I feel so... woozy?"
         jump start
+    else:
+        show roommate full_body at center:
+            zoom .5
+        r "We need to talk!"
 
 
     # This ends the game.
 
+    scene bg coffee shop
+
+    "This scene is just for testing sizing and visible portion for the character art"
+label change:
+
+    show player_character full_body at left:
+        zoom test.charZoom
+        ypos test.level
+    show roommate full_body at center:
+        zoom test.charZoom
+        ypos test.level
+    show friend full_body at right:
+        zoom test.charZoom
+        ypos test.level
+
+    "These are currently half scaled. You can raise or lower them, and make the bigger or smaller."
+
+    menu:
+        "Higher":
+            $ test.level -= .1
+        "Lower":
+            $ test.level += .1
+        "Bigger":
+            $ test.charZoom += .05
+        "Smaller":
+            $ test.charZoom -= .05
+        "Exit":
+            jump end
+
+    jump change
+
+label end:
     return
