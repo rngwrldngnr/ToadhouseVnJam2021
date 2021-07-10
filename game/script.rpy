@@ -24,7 +24,6 @@ default test.charZoom = .5
 default test.level = 1.0
 
 init python:
-    import re
 
     def restart_loop():
         set_time(497)
@@ -53,24 +52,108 @@ init python:
         update_clock_time()
 
     def before(clockTimeToCheck):
-        hours, minutes, letters = re.split("[: ]", clockTimeToCheck)
+        hours, minutes, letters = renpy.re.split("[: ]", clockTimeToCheck)
         calcTime = (int(hours) * 60) + int(minutes)
         if letters.upper() == "PM":
             calcTime += calc.halfDay
         return schedule.rawTime < calcTime
 
-screen clock_screen():
-    frame:
-        xalign 0 yalign 0
-        text "[schedule.clockTime]":
-            color "ff0000"
-            font "./gui/fonts/CourierPrime-Regular.ttf"
-            size 2 * gui.text_size
+label memoria_game:
+
+    ##### Images
+    image A:
+        "./images/Card_Key.png"
+        zoom .25        # different card images
+    image B:
+        "Card_Phone.png"
+        zoom .25
+    image C:
+        "Card_Back_Brain.png"
+        zoom .25          # back of the card
+
+    #####
+    #
+    # At first, let's set the cards to play (the amount should match the grid size - in this example 12)
+    $ values_list = ["A", "A", "A", "A", "A", "A", "B",  "B", "B", "B", "B", "B"]
+
+    # Then - shuffle them
+    $ values_list = renpy.random.sample(values_list, len(values_list))
+
+    # And make the cards_list that describes all the cards
+    $ cards_list = []
+    python:
+        for i in range (0, len(values_list) ):
+            cards_list.append ( {"c_number":i, "c_value": values_list[i], "c_chosen":False} )
+
+    # Before start the game, let's set the timer
+    $ memo_timer = 50.0
+
+    # Shows the game screen
+    show screen memo_scr
+
+    # The game loop
+    label memo_game_loop:
+        $ can_click = True
+        $ turned_cards_numbers = []
+        $ turned_cards_values = []
+
+        # Let's set the amount of cards that should be opened each turn (all of them should match to win)
+        $ turns_left = 3
+
+        label turns_loop:
+            if turns_left > 0:
+                $ result = ui.interact()
+                $ memo_timer = memo_timer
+                $ turned_cards_numbers.append (cards_list[result]["c_number"])
+                $ turned_cards_values.append (cards_list[result]["c_value"])
+                $ turns_left -= 1
+                jump turns_loop
+
+        # To prevent further clicking befor chosen cards will be processed
+        $ can_click = False
+        # If not all the opened cards are matched, will turn them face down after pause
+        if turned_cards_values.count(turned_cards_values[0]) != len(turned_cards_values):
+            $ renpy.pause (1.0, hard = True)
+            python:
+                for i in range (0, len(turned_cards_numbers) ):
+                    cards_list[turned_cards_numbers[i]]["c_chosen"] = False
+
+        # If cards are matched, will check if player has opened all the cards
+        else:
+            $ renpy.pause (1.0, hard = True)
+            python:
+
+                # Let's remove opened cards from game field
+                # But if you prefere to let them stay - just comment out next 2 lines
+                for i in range (0, len(turned_cards_numbers) ):
+                    cards_list[turned_cards_numbers[i]]["c_value"] = Null()
+
+
+                for j in cards_list:
+                    if j["c_chosen"] == False:
+                        renpy.jump ("memo_game_loop")
+                renpy.jump ("memo_game_win")
+
+        jump memo_game_loop
+
+label memo_game_lose:
+    hide screen memo_scr
+    $ renpy.pause (0.1, hard = True)
+    $ renpy.pause (0.1, hard = True)
+    "You lose! Try again."
+    jump memoria_game
+
+label memo_game_win:
+    hide screen memo_scr
+    $ renpy.pause (0.1, hard = True)
+    $ renpy.pause (0.1, hard = True)
+    "You win!"
+    return
 
 # The game starts here.
 label start:
 
-    # stop music fadeout 1.0
+    stop music fadeout 1.0
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -213,4 +296,5 @@ label change:
     jump change
 
 label end:
+    jump memoria_game
     return

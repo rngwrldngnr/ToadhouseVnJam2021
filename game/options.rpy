@@ -23,14 +23,29 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.0.3"
+define config.version = "0.0.4"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
-""")
+# define credits.programming = _("Programming - ") + renpy.random.shuffle(["Cyn", "Eli"]).join(", ")
+# define credits.writing = _("Writing - Anouk")
+# define credits.music = _("Music - Angela")
+# define credits.sound = _("Sound - Sonic Medley")
+# define credits.backgrounds = _("Background Art - Taylor")
+# define credits.characters = _("Character Art - Bec")
+# define credits.project_management = _("Project Management - Jeffrey")
+
+define gui.about = "\n".join(renpy.random.sample([
+_("Programming - ") + ", ".join(renpy.random.sample(["Cyn", "Eli"], 2)),
+_("Writing - Anouk"),
+_("Music - Angela"),
+_("Sound - Sonic Medley"),
+_("Background Art - Taylor"),
+_("Character Art - Bec"),
+_("Project Management - Jeffrey")
+], 7))
 
 
 ## A short name for the game used for executables and directories in the built

@@ -75,7 +75,42 @@ style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
+################################################################################
+## Custom Screens
+################################################################################
 
+screen memo_scr:
+
+    ##### Timer
+    timer 1.0 action If (memo_timer > 1, SetVariable("memo_timer", memo_timer - 1), Jump("memo_game_lose") ) repeat True
+
+    text str(memo_timer) xalign 0.5 yalign 0.05
+
+    ##### Cards
+    #
+    # To use images, just comment out lines that show text and uncomment lines that show images
+    grid 4 3:
+        for card in cards_list:
+            button:
+                background None
+
+                if card["c_chosen"]:        # shows the face of the card
+                    # text card["c_value"]    # will show text
+                    add card["c_value"]    # will show image
+
+                else:                       # shows the back of the card
+                    # text "X"                # will show text
+                    add "C"                # will show image
+
+                action If ( (card["c_chosen"] or not can_click), None, [SetDict(cards_list[card["c_number"]], "c_chosen", True), Return(card["c_number"]) ] )
+
+screen clock_screen():
+    frame:
+        xalign 0 yalign 0
+        text "[schedule.clockTime]":
+            color "ff0000"
+            font "./gui/fonts/CourierPrime-Regular.ttf"
+            size 2 * gui.text_size
 
 ################################################################################
 ## In-game screens
