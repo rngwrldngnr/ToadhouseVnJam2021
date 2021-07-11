@@ -58,35 +58,40 @@ init python:
             calcTime += calc.halfDay
         return schedule.rawTime < calcTime
 
-label memoria_game:
+default minigame.cards_per_turn = 2
+
+default minigame.saved_shuffles = dict()
+default minigame.aspect_ratio = config.screen_width / (config.screen_height - gui.textbox_height)
+default minigame.yalign = .5 * (config.screen_height - gui.textbox_height) / config.screen_height
+
+label memoria_game(cards=[]):
 
     ##### Images
-    image A:
-        "./images/Card_Key.png"
-        zoom .25        # different card images
-    image B:
+    image Card_Back:
+        "Card_Back.png"
+        zoom .5
+    image Card_Key:
+        "Card_Key.png"
+        zoom .5
+    image Card_Phone:
         "Card_Phone.png"
-        zoom .25
-    image C:
-        "Card_Back_Brain.png"
-        zoom .25          # back of the card
+        zoom .5
 
-    #####
-    #
-    # At first, let's set the cards to play (the amount should match the grid size - in this example 12)
-    $ values_list = ["A", "A", "A", "A", "A", "A", "B",  "B", "B", "B", "B", "B"]
-
-    # Then - shuffle them
-    $ values_list = renpy.random.sample(values_list, len(values_list))
-
+    python:
+        cards.sort()
+        shuffle_key = tuple(cards)
+        try:
+            cards_list = minigame.saved_shuffles[cards]
+        except KeyError:
+            cards = ["Card_" + card for card in cards]
+            values_list = cards * minigame.cards_per_turn
+            values_list = renpy.random.sample(values_list, len(values_list))
+            cards_list = [{"c_number":i, "c_value": card, "c_chosen":False} for i, card in enumerate(values_list)]
     # And make the cards_list that describes all the cards
     $ cards_list = []
     python:
         for i in range (0, len(values_list) ):
             cards_list.append ( {"c_number":i, "c_value": values_list[i], "c_chosen":False} )
-
-    # Before start the game, let's set the timer
-    $ memo_timer = 50.0
 
     # Shows the game screen
     show screen memo_scr
@@ -98,7 +103,7 @@ label memoria_game:
         $ turned_cards_values = []
 
         # Let's set the amount of cards that should be opened each turn (all of them should match to win)
-        $ turns_left = 3
+        $ turns_left = 2
 
         label turns_loop:
             if turns_left > 0:
@@ -215,7 +220,7 @@ label check_bedroom:
 
         "Leave the room" if inv.has_key:
             $ add_minutes(1)
-            jump home
+            jump livingroom
 
 
 # Sections to jump to from search menu
@@ -243,8 +248,8 @@ label check_closet:
     $ knows_key_location = True
     jump menu_bedroom
 
-label home:
-    scene bg home
+label livingroom:
+    scene bg livingroom
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
