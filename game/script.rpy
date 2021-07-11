@@ -3,10 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define p = Character(_("Protagonist"), color="FFC8C8")
-define r = Character(_("Roommate"), color="C8FFC8")
+define p = Character(_("Protagonist"), color="BF93F2")
+define r = Character(_("Roommate"), color="E19E75")
 define a = Character(_("Alien"), color="FFFFFF")
-define f = Character(_("Friend"), color="C8C8FF")
+define f = Character(_("Friend"), color="59A4D6")
 
 default inventory = dict()
 default knowledgeBase = dict()
@@ -20,7 +20,7 @@ default calc.hour = 60
 default calc.clockMax = 12
 default calc.halfDay = calc.hour * calc.clockMax
 
-default test.charZoom = .5
+default test.charZoom = .4
 default test.level = 1.0
 
 init python:
@@ -214,6 +214,7 @@ label check_bedroom:
             jump check_bedroom
 
         "Leave the room" if inv.has_key:
+            $ add_minutes(1)
             jump home
 
 
@@ -258,7 +259,7 @@ label home:
         jump start
     else:
         show roommate full_body at center:
-            zoom .5
+            zoom .4
         r "We need to talk!"
 
 
@@ -287,9 +288,9 @@ label change:
         "Lower":
             $ test.level += .1
         "Bigger":
-            $ test.charZoom += .05
+            $ test.charZoom += .04
         "Smaller":
-            $ test.charZoom -= .05
+            $ test.charZoom -= .04
         "Exit":
             jump end
 
