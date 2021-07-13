@@ -104,7 +104,7 @@ screen memo_scr():
 screen clock_screen:
     frame:
         xalign 0 yalign 0
-        text "[schedule.clockTime]":
+        text "[schedule.clock_time]":
             color "ff0000"
             font "./gui/fonts/CourierPrime-Regular.ttf"
             size 2 * gui.text_size
