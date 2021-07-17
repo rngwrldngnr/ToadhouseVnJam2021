@@ -86,18 +86,18 @@ screen memo_scr():
         ##### Cards
         #
         # To use images, just comment out lines that show text and uncomment lines that show images
-        grid 4 3:
+        grid minigame.columns minigame.rows:
             for card in cards_list:
                 button:
                     background None
 
-                    if card["c_chosen"]:        # shows the face of the card
-                        # text card["c_value"]    # will show text
-                        add card["c_value"]    # will show image
+                    if card["c_chosen"]: # shows the face of the card
+                        add card["c_value"]:
+                            size (minigame.card_size, minigame.card_size)
 
-                    else:                       # shows the back of the card
-                        # text "X"                # will show text
-                        add "C"                # will show image
+                    else: # shows the back of the card
+                        add "Card_Back":
+                            size (minigame.card_size, minigame.card_size)
 
                     action If ( (card["c_chosen"] or not can_click), None, [SetDict(cards_list[card["c_number"]], "c_chosen", True), Return(card["c_number"]) ] )
 
