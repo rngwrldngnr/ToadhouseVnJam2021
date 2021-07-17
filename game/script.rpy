@@ -5,7 +5,7 @@
 
 define p = Character(_("Peyton"), color="BF93F2", image="peyton")
 define r = Character(_("Rain"), color="E19E75", image="rain")
-define f = Character(_("Farah"), color="59A4D6", image="friend")
+define f = Character(_("Farah"), color="59A4D6", image="farah")
 define a = Character(_("Alien"), color="FFFFFF", image="alien")
 
 define d = Character("Programmer Pooch", image="dog_coding.jpg")
@@ -285,7 +285,40 @@ label ending2:
     "Ending 2"
     return
 
+label livingroom_morning_talk_unresolved:
+    "Rain leaves. This is definitely a conversation to pick up again later. Then the words BREAKING NEWS and its accompanying sting on the TV do their job of catching your attention. Your very bored-looking local newsreader is joined by a frazzled colleague. There’s a blurry picture on the screen that’s very similar to the one in the newspaper you picked up yesterday."
+
+    menu:
+        "You're late. Leave to meet Farah.":
+            jump cafe
+        "Turn up the volume to catch what they're saying":
+            jump livingroom_ufo_news
+
+define s = Character(_("Skeptical Anchor"))
+define b = Character(_("Believer Anchor"))
+
+label livingroom_ufo_news:
+    s "-ve heard stories about UFOs before, and nothing has ever come of it. What makes this time any different?"
+    b "The amount of people that have witnessed it, and the photos! You can’t deny those photos. These people took the photos of before and after and one minute those things were there, and the next they weren’t."
+    s "It could be any number of things, a light flare on the camera or a shadow from anything that’s nearby."
+    b "We’ve already ruled out all of those possibilities, our team has gone out there and tried every trick in the book to see if they can recreate these photos and nothing that they tried worked. We could have seen an actual UFO! Think of all the possibilities that could-{nw}"
+
+    "You’re on The UFOrum before the segment is even over. The news segment has drawn a few new members to the forum, who are hotly debating the correct pronunciation of “UFOrum”. You’d been seeing the same witnesses and pictures pop up, of course, but official news outlets don’t usually take these things that seriously. The forum had agreed that this recent evidence was overwhelming, but you had to admit that even the most cautious among you had been disappointed by false hope before. Still, this seemed more than a slow news day to you. You’re neck-deep in the latest thread and have just reported a rude comment about the red-headed newscaster to the moderators {nw}"
+    add_minutes(60)
+    extend "when you realise a lot of time has passed. Whoops. You were supposed to meet Farah for lunch. Time to go."
+    jump cafe
+
 label cafe:
+    scene bg cafe
+    add_minutes(10)
+    "Upon entering the cafe the first thing you notice is the smell of the coffee beans. It’s such a relaxing smell, with an undertone of pastries and other sweets. The cafe has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it. It’s mostly quiet, a few other patrons are talking and you can hear the blender mixing some sort of icy drink."
+    "Farah waves at you from their seat. {nw}"
+    show farah neutral
+    extend "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you would not hesitate to bet is decaffeinated. You indicate nonverbally that you’ll grab your standard chai latte before you join them. You avoid the croissants - this place has not yet realised that there is such a thing as too flakey - but you go for a sandwich and quickly join your friend."
+
+
+
+label test_cafe:
     scene bg cafe
 
     "This scene is just for testing sizing and visible portion for the character art"
