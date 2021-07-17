@@ -5,7 +5,7 @@
 
 define p = Character(_("Peyton"), color="BF93F2", image="peyton")
 define r = Character(_("Rain"), color="E19E75", image="rain")
-define f = Character(_("Friend"), color="59A4D6", image="friend")
+define f = Character(_("Farah"), color="59A4D6", image="friend")
 define a = Character(_("Alien"), color="FFFFFF", image="alien")
 
 define d = Character("Programmer Pooch", image="dog_coding.jpg")
@@ -183,20 +183,20 @@ label livingroom:
     scene bg livingroom
 
     if before("8:23 AM"):
-        jump livingroom_confrontation
+        jump livingroom_morning_talkn
     else:
         pass
 
     "You rush into the living room to grab your stuff. You don’t see your flatmate, "
     extend "but you can still smell the fried eggs they always have for breakfast. "
     extend "They’ve left their dirty dishes on the counter, which is unlike them. "
-    extend "A closer look at the counter reveals a note from Rain. \“We need to talk.\” "
-    "Oh boy. "
-    "You’ll have to worry about that later, though. Time to meet up with _FRIEND_."
+    extend "A closer look at the counter reveals a note from Rain. "
+    "\“We need to talk.\" {w}Oh boy. "
+    "You’ll have to worry about that later, though. Time to meet up with Farah."
     jump cafe
 
 
-label livingroom_confrontation:
+label livingroom_morning_talkn:
     "You rush into the living room to grab your stuff. {nw}"
     extend "This place brings many memories since the years that you’ve lived here. {nw}"
     extend "It’s one of the cosiest areas in your home, {nw}"
@@ -223,7 +223,7 @@ label livingroom_confrontation:
             "You seek a moment of eye contact with your flatmate to give them a reassuring smile and nod. {nw}"
             show rain unhappy eyecontact
             extend "Your flawless comforting technique is not very effective, {nw}"
-            extend "but you don't have time to talk right now. You are meeting _FRIEND_ at the café."
+            extend "but you don't have time to talk right now. You are meeting Farah at the café."
             jump cafe
         "Hey, Rain. Are you okay?":
             pass
@@ -231,11 +231,11 @@ label livingroom_confrontation:
     r unhappy eyecontact "You mean you really don't know what's bothering me?"
     menu:
         "If I did I wouldn't be asking.":
-            jump lrc1_rude
+            jump livingroom_morning_talk_rude
         "I really have no idea, is it something that I can help with?":
-            jump lrc1_polite
+            jump livingroom_morning_talk_polite
 
-label lrc1_rude:
+label livingroom_morning_talk_rude:
     r annoyed "You're being awfully rude for what you did last night. {nw}"
     extend "That's not cool Peyton."
 
@@ -251,7 +251,7 @@ label lrc1_rude:
     extend "We can talk about it later."
     jump cafe
 
-label lrc1_polite:
+label livingroom_morning_talk_polite:
     r unhappy eyecontact "Last night you borrowed my laptop without asking me about it. {w=.5}"
     extend "I normally don’t mind but I couldn’t find it this morning, {nw}"
     extend "and I thought I left it at the café until I found it. I was really worried!"
@@ -260,11 +260,30 @@ label lrc1_polite:
         "I was really worried!"
 
         " I don’t remember doing that at all. I must have been more tired than I thought, I’m sorry. I’ll remember to ask you before borrowing anything of yours again.":
-            r happy "Thank you for that. I have to go now, but it's a weight off my mind."
-            hide rain with dissolve
-            jump cafe
+            jump ending2
         "Are you sure that I did that? Maybe you could have misplaced it before you left.":
             pass
+
+    r annoyed "I was gone all day yesterday, I couldn’t have done it. When I got home last night you were already asleep, and my laptop was missing."
+
+    menu:
+        "My laptop was missing."
+
+        "I didn’t drink last night, and I honestly don’t remember doing it. I’m sorry though, it wasn’t cool to take something of yours without asking.":
+            pass
+        "Maybe I was sleepwalking and took your laptop, I’m sorry. I would never take something of yours without asking.":
+            pass
+
+    jump ending 2
+
+label ending2:
+    r happy "Thank you for that. "
+    show rain neutral eyecontact
+    exend "I have to go now, but it's a weight off my mind."
+    show rain happy
+    hide rain with dissolve
+    "Ending 2"
+    return
 
 label cafe:
     scene bg cafe
@@ -282,7 +301,7 @@ label change:
         zoom test.charZoom
         ypos test.level
 
-    "These are currently half scaled. You can raise or lower them, and make the bigger or smaller."
+    "These are currently [test.charZoom] scale. You can raise or lower them, and make the bigger or smaller."
 
     menu:
         "Higher":
@@ -356,11 +375,6 @@ label memory_game(cards=[]):
             values_list = renpy.random.sample(values_list, len(values_list))
             cards_list = [{"c_number":i, "c_value": card, "c_chosen":False} for i, card in enumerate(values_list)]
             minigame.saved_shuffles[shuffle_key] = cards_list
-    # And make the cards_list that describes all the cards
-    # $ cards_list = []
-    # python:
-    #     for i in range (0, len(values_list) ):
-    #         cards_list.append ( {"c_number":i, "c_value": values_list[i], "c_chosen":False} )
 
     # Shows the game screen
     show screen memo_scr
