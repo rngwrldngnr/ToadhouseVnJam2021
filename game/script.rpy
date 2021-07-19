@@ -553,7 +553,9 @@ label walk_in_the_park:
 
     scene bg ufo interior
     "You’re wary as you peer inside of the UFO. You’re not sure what to expect, but you’ve seen enough horror movies to get a few ideas. From the looks of it, the walls are lined with screens, buttons, and keyboards and something that almost comically looks like a video game joystick. {nw}"
-    show alien neutral with dissolve
+    show alien neutral at center with dissolve:
+        zoom .55
+        ypos 1.65
     extend "And is that a real alien?!"
 
     # conversation between player character and alien. the aliens are shocked to discover their camouflage has failed, but don’t hesitate to share the truth with the player, because they plan to wipe the PC’s mind and restart the loop anyway. the aliens just want to distract the player character long enough to knock them out and restart the loop, but the player character can also try to convince the alien that this is immoral or that they’ve learned their lesson (whichever you prefer). this conversation can end in two ways.
