@@ -604,6 +604,9 @@ label alex_2:
         "Wait, you wipe my memory? Have I been here before?":
             jump narration_a3
 
+label narration_a3:
+    "TODO narration_a3"
+
 label alex_a3:
     a "That would be a hurtful statement if I were sensitive to human emotions. Why would you say such a thing?"
 
@@ -630,10 +633,15 @@ label narration_b:
         "Wait, I thought you said I shouldn’t be here?":
             jump alex_b2
 
+label alex_b2:
+    "TODO alex_b2"
+
 label narration_B1:
     "A wall slides away to reveal a door. Alex guides you through a smooth hallway. You wonder what they use for electricity. The walls are humming and you can smell a scent you can only describe as energetic. You are led into a small, warmly lit room where Alex invites you to sit down. "
 
     a "Just wait here a moment, Payton. I will take care of you."
+
+    jump restart_loop
 
 label alien_talk_b_1_2:
     "Wait, did you tell Alex your name? You don’t remember. You don’t remember."
