@@ -6,7 +6,8 @@
 define p = Character(_("Peyton"), color="BF93F2", image="peyton")
 define r = Character(_("Rain"), color="E19E75", image="rain")
 define f = Character(_("Farah"), color="59A4D6", image="farah")
-define a = Character(_("Alien"), color="FFFFFF", image="alien")
+define a0 = Character(_("Alien"), color="FFFFFF", image="alien")
+define a = Character(_("Alex"), color="FFFFFF", image="alien")
 
 define d = Character("Programmer Pooch", image="dog_coding.jpg")
 
@@ -19,6 +20,7 @@ default schedule.clock_time = "08:17 AM"
 default inv.charge = False
 default inv.has_key = False
 default knows_key_location = False
+default flag.saw_ufo_news = False
 
 default calc.hour = 60
 default calc.clockMax = 12
@@ -37,7 +39,7 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-
+label start_of_loop:
     scene bg bedroom
 
     $ restart_loop()
@@ -49,7 +51,7 @@ label start:
     extend "Your alarm clock tells you it’s August 1st, [schedule.clock_time]. {nw}"
     show screen clock_screen()
     extend "When did you go to bed last night? "
-    extend "You don’t remember, but you do remember agreeing to have coffee with a friend this morning."
+    extend "You don’t remember, but you do remember agreeing to have coffee with Farah this morning."
 
     menu:
         "Get up.":
@@ -205,7 +207,7 @@ label livingroom_morning_talkn:
     extend "because you don’t have much of a green thumb, but it seems to be doing well. {nw}"
     extend "Oh, you’ve left some coffee cups on the table. You should take care of those later."
 
-    show rain full_body:
+    show rain neutral:
         zoom .8
         ypos 1.45
     "The TV is on, but the volume is too low to make out what the newsreaders are saying. {nw}"
@@ -274,16 +276,7 @@ label livingroom_morning_talk_polite:
         "Maybe I was sleepwalking and took your laptop, I’m sorry. I would never take something of yours without asking.":
             pass
 
-    jump ending 2
-
-label ending2:
-    r happy "Thank you for that. "
-    show rain neutral eyecontact
-    exend "I have to go now, but it's a weight off my mind."
-    show rain happy
-    hide rain with dissolve
-    "Ending 2"
-    return
+    jump ending2
 
 label livingroom_morning_talk_unresolved:
     "Rain leaves. This is definitely a conversation to pick up again later. Then the words BREAKING NEWS and its accompanying sting on the TV do their job of catching your attention. Your very bored-looking local newsreader is joined by a frazzled colleague. There’s a blurry picture on the screen that’s very similar to the one in the newspaper you picked up yesterday."
@@ -298,25 +291,185 @@ define s = Character(_("Skeptical Anchor"))
 define b = Character(_("Believer Anchor"))
 
 label livingroom_ufo_news:
+    $ flag.saw_ufo_news = True
     s "-ve heard stories about UFOs before, and nothing has ever come of it. What makes this time any different?"
     b "The amount of people that have witnessed it, and the photos! You can’t deny those photos. These people took the photos of before and after and one minute those things were there, and the next they weren’t."
     s "It could be any number of things, a light flare on the camera or a shadow from anything that’s nearby."
     b "We’ve already ruled out all of those possibilities, our team has gone out there and tried every trick in the book to see if they can recreate these photos and nothing that they tried worked. We could have seen an actual UFO! Think of all the possibilities that could-{nw}"
 
     "You’re on The UFOrum before the segment is even over. The news segment has drawn a few new members to the forum, who are hotly debating the correct pronunciation of “UFOrum”. You’d been seeing the same witnesses and pictures pop up, of course, but official news outlets don’t usually take these things that seriously. The forum had agreed that this recent evidence was overwhelming, but you had to admit that even the most cautious among you had been disappointed by false hope before. Still, this seemed more than a slow news day to you. You’re neck-deep in the latest thread and have just reported a rude comment about the red-headed newscaster to the moderators {nw}"
-    add_minutes(60)
+    $ add_minutes(60)
     extend "when you realise a lot of time has passed. Whoops. You were supposed to meet Farah for lunch. Time to go."
     jump cafe
 
 label cafe:
     scene bg cafe
-    add_minutes(10)
+    $ add_minutes(10)
     "Upon entering the cafe the first thing you notice is the smell of the coffee beans. It’s such a relaxing smell, with an undertone of pastries and other sweets. The cafe has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it. It’s mostly quiet, a few other patrons are talking and you can hear the blender mixing some sort of icy drink."
     "Farah waves at you from their seat. {nw}"
     show farah neutral
     extend "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you would not hesitate to bet is decaffeinated. You indicate nonverbally that you’ll grab your standard chai latte before you join them. You avoid the croissants - this place has not yet realised that there is such a thing as too flakey - but you go for a sandwich and quickly join your friend."
 
+label talk_it_out_later:
 
+    scene bg park
+    "The park is much like any other outdoor area. It has a path that loops around the side of a lake with a scattering of trees and a singular bench overlooking the small lake. {nw}"
+
+    if not flag.saw_ufo_news:
+
+        extend "It’s unassuming and that’s why you like it. Its utter blandness seems to have repelled all other pedestrians today, so the single bench is all yours. "
+
+        "You take a moment to reflect. Sometimes it seems like Rain’s outbursts come out of nowhere, but you know she has a habit of cropping up frustrations. She avoids confrontations until something finally breaks the dam. Exploding over one problem isn’t the way to go about it, though."
+
+        menu:
+            "What do you do next?"
+
+            "I’ll let Rain cool off a bit.":
+                jump ending3
+            "We need to talk this out properly.":
+                jump ending2
+
+    else:
+
+        scene bg park ufo with dissolve
+        extend "It’s unassuming, but with a double take you realize… wait, is that a UFO?! So the papers weren’t lying! It’s unlike any UFO you’ve ever seen, the movies don’t do it justice. You could have sworn it was almost camouflaged in with everything else, and that if you hadn't taken a second look you might have completely missed it. As you circle it slowly, you notice an open hatch."
+
+        menu:
+            "What do you do?"
+
+            "This is too much. I did not see this.":
+                jump ending3
+            "I get in there!":
+                pass
+
+    scene bg ufo interior
+    "You’re wary as you peer inside of the UFO. You’re not sure what to expect, but you’ve seen enough horror movies to get a few ideas. From the looks of it, the walls are lined with screens, buttons, and keyboards and something that almost comically looks like a video game joystick. {nw}"
+    show alien neutral with dissolve
+    extend "And is that a real alien?!"
+
+    # conversation between player character and alien. the aliens are shocked to discover their camouflage has failed, but don’t hesitate to share the truth with the player, because they plan to wipe the PC’s mind and restart the loop anyway. the aliens just want to distract the player character long enough to knock them out and restart the loop, but the player character can also try to convince the alien that this is immoral or that they’ve learned their lesson (whichever you prefer). this conversation can end in two ways.
+    #
+    # either: the aliens aren’t convinced. (END 4)
+    # or: the player character convinces the alien. (END 1)
+
+    a0 "Excuse me. You shouldn’t be here. How did you get here? What are you doing?"
+
+    menu:
+        "I could ask you the same questions.":
+            jump alien_talk_a
+        "The door was open. I thought I’d take a look.":
+            jump narration_b
+
+label alien_talk_a:
+    "The alien seems… nervous? Angry? Insulted? It’s tough to tell. The helmet’s in the way and you have no idea if your human interpretations of facial expressions apply to this alien. That thought makes a nervous giggle burst up inside of you. An alien!"
+
+    a0 "You can call me Alex. {nw}"
+    a "You can call me Alex. This is my ship. I am here to observe the social interactions between the people of this town to see if humans are capable of conflict resolution. Your presence is harming the accuracy of our data. Please follow me. I will take you home."
+
+    menu:
+        "Alright, I don’t want any trouble.":
+            jump alien_talk_b_1_2
+        "Wait, you’re experimenting on us? That’s so cliché.":
+            pass
+
+    a "Do not insult that which you do not understand. We are doing important work."
+
+    menu:
+        "Okay, I’m getting bad vibes here. I’ll leave.":
+            jump narration_2
+        "You’re right, I don’t understand. Explain it to me.":
+            jump alex_2
+
+label narration_2:
+    "The alien looks relieved, but again, you can’t be 100% sure. The only thing you’re certain of is that Alex definitely doesn’t want you to be here. Those suspicions are immediately confirmed when you notice another alien sneak up behind you. A second later, you’re no longer worried at all. Why were you here again? You don’t remember."
+    jump restart_loop
+
+label alex_2:
+    a "We are here to see if your planet is ready to join our galactic federation of planets. You have been chosen as a test subject. We are observing your ability to peacefully resolve a conflict. When you fail, wipe your memory and make you try again."
+
+    menu:
+        "That seems like an ill-conceived experiment doomed to fail.":
+            jump alex_a3
+        "Wait, you wipe my memory? Have I been here before?":
+            jump narration_a3
+
+label alex_a3:
+    a "That would be a hurtful statement if I were sensitive to human emotions. Why would you say such a thing?"
+
+    menu:
+        "Your experiment is cruel and inhumane!":
+            jump ending4
+        "I can’t learn and grow if you wipe my memory!":
+            jump narration_a4
+
+label narration_a4:
+    "Alex contemplates your words. As the alien considers your argument, you look around to see if anyone is trying to sneak up behind you to wipe your mind. Another alien catches your eye, but it doesn’t look like you’re about to get zapped with some kind of mind-wiping device."
+
+    a "We did not consider this perspective. Your logic is sound. We will release you. Do not make us regret it. Go out and grow."
+    jump ending1
+
+label narration_b:
+    "The alien seems calmed by your willingness to answer questions. You can’t be certain, though. The facial expressions seem similar to yours, but this is an alien."
+
+    a "Of course. Curiosity is only natural. You can call me Alex. Would you like a tour?"
+
+    menu:
+        "Yes, please!":
+            jump narration_B1
+        "Wait, I thought you said I shouldn’t be here?":
+            jump alex_b2
+
+label narration_B1:
+    "A wall slides away to reveal a door. Alex guides you through a smooth hallway. You wonder what they use for electricity. The walls are humming and you can smell a scent you can only describe as energetic. You are led into a small, warmly lit room where Alex invites you to sit down. "
+
+    a "Just wait here a moment, Payton. I will take care of you."
+
+label alien_talk_b_1_2:
+    "Wait, did you tell Alex your name? You don’t remember. You don’t remember."
+    jump restart_loop
+
+label restart_loop:
+    # play loop restart music
+    jump start_of_loop
+
+label ending1:
+    scene bg park ufo with fade
+    "You stumble out of the UFO on shaky legs. "
+    "You like to think you have an open mind when it comes to things the world isn’t ready to believe, but this has surpassed all expectations. "
+    scene bg park with dissolve
+    "You’re not ready to think about the implications yet, but you are ready to make some dinner and talk about the argument with Rain."
+    scene bg livingroom
+    show rain neutral at right
+    show peyton neutral at left
+    with dissolve
+    "When she suggests putting on an episode of X-Files in the background while you eat, you suggest Jurassic Park instead."
+    show rain happy
+    show peyton happy
+    "Over dinner and a movie you both know by heart, you talk things out in a non-confrontational way. "
+    "You promise to take more notes so you don’t forget as much, while Rain promises to try harder to address frustrations before they become insurmountable problems. "
+
+    scene bg bedroom with dissolve
+    "You go to bed satisfied and exhilarated. "
+    "Aliens?! "
+    "Right now, though, you’re just happy you didn’t have to go to bed angry. {w}You’ll deal with the world-shattering implications of this discovery tomorrow."
+    scene black with fade
+    "{b}ENDING 1{/b}"
+    return
+
+label ending2:
+    r happy "Thank you for that. "
+    show rain neutral eyecontact
+    extend "I have to go now, but it's a weight off my mind."
+    show rain happy
+    hide rain with dissolve
+    "{b}ENDING 2{/b}"
+    return
+
+label ending3:
+    pass
+
+label ending4:
+    pass
 
 label test_cafe:
     scene bg cafe
@@ -330,7 +483,7 @@ label change:
     show rain neutral at center:
         zoom test.charZoom
         ypos test.level
-    show friend neutral at right:
+    show farah neutral at right:
         zoom test.charZoom
         ypos test.level
 
@@ -461,7 +614,7 @@ label memo_game_lose:
     $ renpy.pause (0.1, hard = True)
     $ renpy.pause (0.1, hard = True)
     "You lose! Try again."
-    jump memoria_game
+    jump memory_game
 
 label memo_game_win:
     hide screen memo_scr

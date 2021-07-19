@@ -101,7 +101,7 @@ screen memo_scr():
 
                     action If ( (card["c_chosen"] or not can_click), None, [SetDict(cards_list[card["c_number"]], "c_chosen", True), Return(card["c_number"]) ] )
 
-screen clock_screen:
+screen clock_screen():
     frame:
         xalign 0 yalign 0
         text "[schedule.clock_time]":
