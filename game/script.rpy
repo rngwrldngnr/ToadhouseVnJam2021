@@ -522,10 +522,149 @@ label cafe_rain_late:
             jump walk_in_the_park
 
 label walk_in_the_park:
-    "TODO walk"
+    "TODO walk_in_the_park"
+    jump end_2
 
 label call_rain:
-    "TODO call_rain"
+    scene bg park
+
+    "You decide you don’t want to let this stew any longer."
+    "You have your phone on you."
+    "Phone calls are the worst way to communicate, but one of the only ways to talk to your flatmate directly without the risk of your tone of voice being misinterpreted."
+    "Time for a call."
+
+    r "What is it, Payton? I don’t have time to talk right now."
+
+    menu:
+        "Does that mean “I don’t want to talk?” as usual?":
+            jump call_rain_a
+
+        "I wanted to talk things out, but it can wait.":
+            jump call_rain_b
+
+label call_rain_a:
+    p "Does that mean “I don’t want to talk?” as usual?"
+
+    r "Yes, but you don’t have to be a dick about it."
+
+    menu:
+        "You’re right, I’m sorry. I just want to stop avoiding this.":
+            jump call_rain_a1
+
+        "You always avoid confrontation! No wonder we fight.":
+            jump call_rain_a2
+
+label call_rain_a1:
+    p "You’re right, I’m sorry. I just want to stop avoiding this."
+
+    r "I know, I know, I’m being a dick too."
+    r "I hate these kinds of conversations, but I don’t want to stay mad."
+    r "Let’s talk tonight, over dinner."
+    r "It’s easier for me to talk when there’s food around to focus on."
+
+    menu:
+        "Sounds good":
+            p "Sounds good. I’ll make lasagna."
+            jump end_2
+
+        "That's not good enough":
+            p "That’s not good enough. You’ll still be distracted."
+            jump call_narration
+
+label call_rain_a2:
+    p "You always avoid confrontation! No wonder we fight."
+
+    "TODO call_rain_a2"
+
+label call_rain_b:
+    p "I wanted to talk things out, but it can wait."
+
+    r "Good, I’m glad."
+    r "I do want to talk things out, Payton."
+    r "It just makes me nervous when we fight."
+
+    menu:
+        "Still?":
+            p "Still? You’ve known me forever! Get over yourself."
+            jump call_narration
+
+        "I know, but we have to meet in the middle.":
+            p "I know, but we have to meet in the middle."
+
+            r "You’re right."
+            r "We’ll have a proper conversation when I get back from work."
+            r "Are you still okay with having dinner ready when I get back?"
+            r "If you cook, I’ll do most of the talking."
+
+            jump end_2
+
+label call_narration:
+    "You hang up on Rain with no small amount of irritation."
+    "She always does this!"
+    "You know confrontations are scary, but surely Rain knows you better than this?"
+    "It makes you sad and angry."
+
+    jump end_3
+
+label end_1:
+    scene black
+
+    "You stumble out of the UFO on shaky legs."
+    "You like to think you have an open mind when it comes to things the world isn’t ready to believe, but this has surpassed all expectations."
+    "You’re not ready to think about the implications yet, but you are ready to make some dinner and talk about the argument with Rain."
+    "When she suggests putting on an episode of X-Files in the background while you eat, you suggest Jurassic Park instead."
+
+    "Over dinner and a movie you both know by heart, you talk things out in a non-confrontational way."
+    "You promise to take more notes so you don’t forget as much, while Rain promises to try harder to address frustrations before they become insurmountable problems."
+
+    "You go to bed satisfied and exhilarated."
+    "Aliens?!"
+    "Right now, though, you’re just happy you didn’t have to go to bed angry."
+    "You’ll deal with the world-shattering implications of this discovery tomorrow."
+
+    jump exit_time_loop
+
+label end_2:
+    scene black
+
+    "Thankfully, the rest of your day is uneventful."
+    "You finally get some long-postponed chores done, but the fight still lingers in the back of your mind."
+    "Later, when your flatmate gets back from work, you make dinner, put on Jurassic Park in the background, and properly talk things out."
+
+    "You go to bed glad you took the time to talk."
+    "Still, it takes you a while to fall asleep."
+    "There’s a strange humming noise outside, but you can’t see where it’s coming from."
+    "You’re too tired to deal with it now, though, so you’ll just have to see if it’s still a problem tomorrow."
+
+    jump exit_time_loop
+
+label end_3:
+    scene black
+
+    "You decide you need some time to clear your head, so you spend your day wandering around town and doing some long-postponed chores."
+    "When you finally get home that evening, you immediately realise you’ve well and truly messed up this time, at least as far as Rain is concerned."
+    "She’s had some time to think it over, same as you, and is clearly not ready to let this go yet."
+    "Your relationship with Rain has taken a dent. If you could try again, you’d probably do things differently."
+    "Going to bed angry never feels great, but sometimes you need to take a moment. You’ll try again tomorrow."
+
+    jump start
+
+label end_4:
+    scene black
+
+    "You try to explain how hurtful this experiment truly is, but Alex is not convinced of your emotional argument."
+    "As you try to make your case, another alien comes up behind you and calmly tells you you have failed at conflict resolution."
+    "The experiment is safe, though! You will get another chance."
+
+    jump start
+
+label exit_time_loop:
+    "TODO exit_time_loop"
+    jump end_game_credits
+
+label end_game_credits:
+    "TODO end_game_credits"
+    return
 
 
 label test_cafe:
