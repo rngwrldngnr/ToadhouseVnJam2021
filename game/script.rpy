@@ -95,7 +95,8 @@ label lay_around_waiting_charge:
     $ inv.charge = True
     jump explore_your_room
 
-default loops.key_location = 0
+# Note: -1 means the location will be set to the last place checked on the first loop.
+default loops.key_location = -1
 
 label explore_your_room:
     $ add_minutes(1)
@@ -124,7 +125,6 @@ label explore_your_room:
 #            # "Key must be found with minigame (leave through window until you win)":
 #        hide dog_coding
 
-    $ loops.key_location = -1
     $ key_location_set = set()
     menu check_bedroom:
         set key_location_set
