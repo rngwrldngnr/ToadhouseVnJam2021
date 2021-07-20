@@ -37,11 +37,11 @@ label call_rain_a1:
     r "It’s easier for me to talk when there’s food around to focus on."
 
     menu:
-        "Sounds good":
+        "Sounds good.":
             p "Sounds good. I’ll make lasagna."
             jump end_2
 
-        "That's not good enough":
+        "That's not good enough.":
             p "That’s not good enough. You’ll still be distracted."
             jump call_narration
 

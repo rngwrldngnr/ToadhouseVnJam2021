@@ -39,9 +39,9 @@ label grab_your_phone:
     extend "You’re supposed to meet your friend soon."
 
     menu:
-        "Lay around waiting for it to charge":
+        "Lay around waiting for it to charge.":
             jump lay_around_waiting_charge
-        "Go get breakfast":
+        "Go get breakfast.":
             jump explore_your_room
 
 label lay_around_waiting_charge:
@@ -91,19 +91,19 @@ label explore_your_room:
 #        "Your memory of last night (doesn't work yet)": #if loops.key_location == 5:
 #            call memory_game(["Key", "Alien", "Phone"])
 
-        "The bedside table":
+        "The bedside table.":
             call check_bedside_table from _call_check_bedside_table
 
-        "The dresser drawers":
+        "The dresser drawers.":
             call check_drawers from _call_check_drawers
 
-        "The posters":
+        "The posters.":
             call check_posters from _call_check_posters
 
-        "The key on the dresser":
+        "The key on the dresser.":
             call check_dresser from _call_check_dresser
 
-        "The outside of the bedroom" if inv.has_key:
+        "The outside of the bedroom." if inv.has_key:
             $ add_minutes(1)
             jump livingroom
 

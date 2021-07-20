@@ -47,7 +47,7 @@ label cafe_no_rain:
     "You still haven’t figured out what to do about Rain, but maybe a walk will help."
 
     menu:
-        "Take a walk":
+        "Take a walk.":
             jump walk_in_the_park
 
 label cafe_about_rain:
@@ -57,11 +57,11 @@ label cafe_about_rain:
     f "What’s wrong?"
 
     menu:
-        "Rain is upset about something I don’t remember doing":
+        "Rain is upset about something I don’t remember doing.":
             p "Rain is upset about something I don’t remember doing."
             jump farah_b1
 
-        "I’d rather talk about something else right now":
+        "I’d rather talk about something else right now.":
             p "I’m okay, I’d rather talk about something else right now."
             jump farah_b2
 
@@ -93,7 +93,7 @@ label farah_b2:
     "You need some more time to clear your head."
 
     menu:
-        "Take a walk":
+        "Take a walk.":
             jump walk_in_the_park
 
 label farah_b3:
@@ -108,7 +108,7 @@ label farah_b3:
     "You definitely need some more time to think about your argument with Rain, though. Maybe a walk will help."
 
     menu:
-        "Take a walk":
+        "Take a walk.":
             jump walk_in_the_park
 
 label farah_narration:
@@ -122,10 +122,10 @@ label farah_narration:
     menu:
         "Do you still need some time to process or should you get in touch with Rain right away?"
 
-        "Take a walk":
+        "Take a walk.":
             jump walk_in_the_park
 
-        "Call Rain":
+        "Call Rain.":
             jump call_rain
 
 label cafe_late:
@@ -147,7 +147,7 @@ label cafe_complain:
     "You’ll schedule in some time for stuff-figuring-outing afterwards."
 
     menu:
-        "Take a walk":
+        "Take a walk.":
             jump walk_in_the_park
 
 label cafe_rain_late:
