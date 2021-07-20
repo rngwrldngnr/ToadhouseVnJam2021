@@ -26,8 +26,24 @@ label start:
 
     stop music fadeout 1.0
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    # Uncomment this to quickly jump to certain parts of the game.
+    # Don't forget to comment the line back before committing!
+    #jump start_debug
+
 label start_of_loop:
     jump bedroom_start
+
+label start_debug:
+    menu:
+        "Normal start":
+            jump start_of_loop
+
+        "Cafe on time":
+            jump cafe
+
+        "UFO in park":
+            $ flag.saw_ufo_news = True
+            jump walk_in_the_park
+
+        "Rain talk":
+            jump livingroom
