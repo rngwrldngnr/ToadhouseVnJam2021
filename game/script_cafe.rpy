@@ -13,7 +13,7 @@ label cafe:
         ypos 1.45
     extend "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you would not hesitate to bet is decaffeinated."
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
-    "You avoid the croissants - this place has not yet realised that there is such a thing as too flakey - but you go for a sandwich and quickly join your friend."
+    "You avoid the croissants—this place has not yet realised that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
 
     if late_for_cafe:
         jump cafe_late
