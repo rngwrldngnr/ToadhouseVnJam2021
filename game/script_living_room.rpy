@@ -117,9 +117,6 @@ label livingroom_morning_talk_unresolved:
         "Turn up the volume to catch what they're saying":
             jump livingroom_ufo_news
 
-define SkepticalAnchor = Character(_("Skeptical Anchor"))
-define BelieverAnchor = Character(_("Believer Anchor"))
-
 label livingroom_ufo_news:
     $ flag.saw_ufo_news = True
     SkepticalAnchor "We’ve heard stories about UFOs before, and nothing has ever come of it. What makes this time any different?"
