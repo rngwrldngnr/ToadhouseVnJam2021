@@ -21,9 +21,9 @@ label cafe:
         jump cafe_on_time
 
 label cafe_on_time:
-    f "Payton, how’s it going?"
-    f "I got here before you and it felt rude not to order, but I promise the caffeine in this decaf latte has barely hit my bloodstream."
-    f "How have you been?"
+    Farah "Payton, how’s it going?"
+    Farah "I got here before you and it felt rude not to order, but I promise the caffeine in this decaf latte has barely hit my bloodstream."
+    Farah "How have you been?"
 
     menu:
         "I’m alright, how about you?":
@@ -33,10 +33,10 @@ label cafe_on_time:
             jump cafe_about_rain
 
 label cafe_no_rain:
-    p "I’m alright, how about you?"
+    Peyton "I’m alright, how about you?"
 
-    f "I’ve got a Payton, I’ve got a coffee."
-    f "Right now is looking good to me."
+    Farah "I’ve got a Payton, I’ve got a coffee."
+    Farah "Right now is looking good to me."
 
     "You’re inclined to agree."
     "No use ruining this moment by worrying about Rain."
@@ -51,39 +51,39 @@ label cafe_no_rain:
             jump walk_in_the_park
 
 label cafe_about_rain:
-    p "I think Rain and I had a fight last night?"
+    Peyton "I think Rain and I had a fight last night?"
 
-    f "You think? You don’t remember?"
-    f "What’s wrong?"
+    Farah "You think? You don’t remember?"
+    Farah "What’s wrong?"
 
     menu:
         "Rain is upset about something I don’t remember doing.":
-            p "Rain is upset about something I don’t remember doing."
+            Peyton "Rain is upset about something I don’t remember doing."
             jump farah_b1
 
         "I’d rather talk about something else right now.":
-            p "I’m okay, I’d rather talk about something else right now."
+            Peyton "I’m okay, I’d rather talk about something else right now."
             jump farah_b2
 
 label farah_b1:
-    f "I know your memory is spotty sometimes, but that’s a lot to forget."
-    f "Rain actually texted me about it."
-    f "She talks things through with me sometimes before confronting a problem."
-    f "Would you like to talk about it too?"
+    Farah "I know your memory is spotty sometimes, but that’s a lot to forget."
+    Farah "Rain actually texted me about it."
+    Farah "She talks things through with me sometimes before confronting a problem."
+    Farah "Would you like to talk about it too?"
 
     menu:
         "She talked to you before she talked to me?!":
-            p "She talked to you before she talked to me?!"
+            Peyton "She talked to you before she talked to me?!"
             jump farah_b3
 
         "Yeah, that might help.":
-            p "Yeah, that might help."
+            Peyton "Yeah, that might help."
             jump farah_narration
 
 label farah_b2:
-    f "Yeah, of course."
-    f "We’re here to have coffee and take a break."
-    f "Want to see a picture of my cats?"
+    Farah "Yeah, of course."
+    Farah "We’re here to have coffee and take a break."
+    Farah "Want to see a picture of my cats?"
 
     "Farah shows you the world’s cutest pictures of their cats."
     "You’d already seen most of them on social media and you’re about to point that out, but for once you catch yourself before you say it."
@@ -97,10 +97,10 @@ label farah_b2:
             jump walk_in_the_park
 
 label farah_b3:
-    f "Rain is one of my closest friends, Payton, of course we talk!"
-    f "I know she’s mad at you, but you don’t have to take it out on me."
-    f "Look, I know you’re upset, but do you think you can set it aside for an hour so we can spend some time together?"
-    f "You can pick it up with Rain later."
+    Farah "Rain is one of my closest friends, Payton, of course we talk!"
+    Farah "I know she’s mad at you, but you don’t have to take it out on me."
+    Farah "Look, I know you’re upset, but do you think you can set it aside for an hour so we can spend some time together?"
+    Farah "You can pick it up with Rain later."
 
     "Farah’s right."
     "You didn’t come here to get upset at Farah. You came here for a hot caffeinated beverage and some time with a friend."
@@ -129,7 +129,7 @@ label farah_narration:
             jump call_rain
 
 label cafe_late:
-    f "Payton, I’ve practically finished my coffee already. You’re so late, what happened?"
+    Farah "Payton, I’ve practically finished my coffee already. You’re so late, what happened?"
 
     menu:
         "Ugh, the world hates me today. Everything’s going wrong.":
@@ -139,8 +139,8 @@ label cafe_late:
             jump cafe_rain_late
 
 label cafe_complain:
-    f "Ah, that sucks."
-    f "Next time the world hates you, though, could you shoot me a message so I know I can sleep in a little longer?"
+    Farah "Ah, that sucks."
+    Farah "Next time the world hates you, though, could you shoot me a message so I know I can sleep in a little longer?"
 
     "The conversation quickly devolves into jokes about setting up an app that automatically texts your friends to cancel when the stars aren’t in position for your hangout."
     "Your friends won’t always be in the mood to help you figure out your stuff, but Farah is always up for a decaf latte and a terrible pun."
@@ -151,13 +151,13 @@ label cafe_complain:
             jump walk_in_the_park
 
 label cafe_rain_late:
-    f "Yeah, she told me. I hope you two work things out."
+    Farah "Yeah, she told me. I hope you two work things out."
 
     menu:
         "Wait, she told you we had a fight?":
-            f "I’ve known Rain my whole life, of course she tells me when she’s upset."
-            f "Listen, I love you, but we’ve already lost some valuable hangout time, so I don’t want to play mediator right now."
-            f "Can we just enjoy our coffee?"
+            Farah "I’ve known Rain my whole life, of course she tells me when she’s upset."
+            Farah "Listen, I love you, but we’ve already lost some valuable hangout time, so I don’t want to play mediator right now."
+            Farah "Can we just enjoy our coffee?"
             pass
 
         "I’ll talk to Rain later. I just need a break.":

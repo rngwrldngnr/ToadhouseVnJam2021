@@ -11,7 +11,7 @@ label ufo_start:
     # either: the aliens aren’t convinced. (END 4)
     # or: the player character convinces the alien. (END 1)
 
-    a0 "Excuse me. You shouldn’t be here. How did you get here? What are you doing?"
+    Alien "Excuse me. You shouldn’t be here. How did you get here? What are you doing?"
 
     menu:
         "I could ask you the same questions.":
@@ -22,8 +22,8 @@ label ufo_start:
 label alien_talk_a:
     "The alien seems… nervous? Angry? Insulted? It’s tough to tell. The helmet’s in the way and you have no idea if your human interpretations of facial expressions apply to this alien. That thought makes a nervous giggle burst up inside of you. An alien!"
 
-    a0 "You can call me Alex. {nw}"
-    a "You can call me Alex. This is my ship. I am here to observe the social interactions between the people of this town to see if humans are capable of conflict resolution. Your presence is harming the accuracy of our data. Please follow me. I will take you home."
+    Alien "You can call me Alex. {nw}"
+    Alex "You can call me Alex. This is my ship. I am here to observe the social interactions between the people of this town to see if humans are capable of conflict resolution. Your presence is harming the accuracy of our data. Please follow me. I will take you home."
 
     menu:
         "Alright, I don’t want any trouble.":
@@ -31,7 +31,7 @@ label alien_talk_a:
         "Wait, you’re experimenting on us? That’s so cliché.":
             pass
 
-    a "Do not insult that which you do not understand. We are doing important work."
+    Alex "Do not insult that which you do not understand. We are doing important work."
 
     menu:
         "Okay, I’m getting bad vibes here. I’ll leave.":
@@ -48,7 +48,7 @@ label narration_2:
     jump restart_loop
 
 label alex_2:
-    a "We are here to see if your planet is ready to join our galactic federation of planets. You have been chosen as a test subject. We are observing your ability to peacefully resolve a conflict. When you fail, we wipe your memory and make you try again."
+    Alex "We are here to see if your planet is ready to join our galactic federation of planets. You have been chosen as a test subject. We are observing your ability to peacefully resolve a conflict. When you fail, we wipe your memory and make you try again."
 
     menu:
         "That seems like an ill-conceived experiment doomed to fail.":
@@ -57,7 +57,7 @@ label alex_2:
             jump narration_a3
 
 label alex_a3:
-    a "That would be a hurtful statement if I were sensitive to human emotions. Why would you say such a thing?"
+    Alex "That would be a hurtful statement if I were sensitive to human emotions. Why would you say such a thing?"
 
     menu:
         "Your experiment is cruel and inhumane!":
@@ -68,7 +68,7 @@ label alex_a3:
 label narration_a4:
     "Alex contemplates your words. As the alien considers your argument, you look around to see if anyone is trying to sneak up behind you to wipe your mind. Another alien catches your eye, but it doesn’t look like you’re about to get zapped with some kind of mind-wiping device."
 
-    a "We did not consider this perspective. Your logic is sound. We will release you. Do not make us regret it. Go out and grow."
+    Alex "We did not consider this perspective. Your logic is sound. We will release you. Do not make us regret it. Go out and grow."
     jump end_1
 
 label narration_a3:
@@ -82,7 +82,7 @@ label narration_a3:
 label narration_b:
     "The alien seems calmed by your willingness to answer questions. You can’t be certain, though. The facial expressions seem similar to yours, but this is an alien."
 
-    a "Of course. Curiosity is only natural. You can call me Alex. Would you like a tour?"
+    Alex "Of course. Curiosity is only natural. You can call me Alex. Would you like a tour?"
 
     menu:
         "Yes, please!":
@@ -93,15 +93,15 @@ label narration_b:
 label narration_B1:
     "A wall slides away to reveal a door. Alex guides you through a smooth hallway. You wonder what they use for electricity. The walls are humming and you can smell a scent you can only describe as energetic. You are led into a small, warmly lit room where Alex invites you to sit down. "
 
-    a "Just wait here a moment, Payton. I will take care of you."
+    Alex "Just wait here a moment, Payton. I will take care of you."
 
     jump restart_loop
 
 label alex_b2:
-    a "Your short-term memory is still good."
-    a "Excellent."
-    a "Not to worry, you will be out of here soon enough."
-    a "We have no reason to hurt you."
+    Alex "Your short-term memory is still good."
+    Alex "Excellent."
+    Alex "Not to worry, you will be out of here soon enough."
+    Alex "We have no reason to hurt you."
 
     "You don’t know if that was meant to be reassuring, but if it was, it failed."
     "You turn around, looking for the exit, but the door you came in through is no longer there."

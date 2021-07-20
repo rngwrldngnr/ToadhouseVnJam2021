@@ -3,13 +3,13 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define p = Character(_("Peyton"), color="BF93F2", image="peyton")
-define r = Character(_("Rain"), color="E19E75", image="rain")
-define f = Character(_("Farah"), color="59A4D6", image="farah")
-define a0 = Character(_("Alien"), color="FFFFFF", image="alien")
-define a = Character(_("Alex"), color="FFFFFF", image="alien")
+define Peyton = Character(_("Peyton"), color="BF93F2", image="peyton")
+define Rain = Character(_("Rain"), color="E19E75", image="rain")
+define Farah = Character(_("Farah"), color="59A4D6", image="farah")
+define Alien = Character(_("Alien"), color="FFFFFF", image="alien")
+define Alex = Character(_("Alex"), color="FFFFFF", image="alien")
 
-define d = Character("Programmer Pooch", image="dog_coding.jpg")
+define ProgrammerPooch = Character("Programmer Pooch", image="dog_coding.jpg")
 
 default inventory = dict()
 default knowledgeBase = dict()

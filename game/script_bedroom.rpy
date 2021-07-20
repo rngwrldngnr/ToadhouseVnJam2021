@@ -72,7 +72,7 @@ label explore_your_room:
 #    if loops.key_location == 0:
 #        show dog_coding at top
 #        menu dev_choose_how_to_find_key:
-#            d "You can test the different ways we've talke about finding the key."
+#            ProgrammerPooch "You can test the different ways we've talke about finding the key."
 #
 #            "Randomly placed key (same position in loops)":
 #                $ loops.key_location = renpy.random.randint(1,4)

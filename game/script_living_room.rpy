@@ -50,7 +50,7 @@ label livingroom_morning_talk_skip:
     jump cafe
 
 label livingroom_morning_talk_start:
-    r unhappy eyecontact "You mean you really don’t know what’s bothering me?"
+    Rain unhappy eyecontact "You mean you really don’t know what’s bothering me?"
     menu:
         "If I did I wouldn’t be asking.":
             jump livingroom_morning_talk_rude
@@ -58,23 +58,23 @@ label livingroom_morning_talk_start:
             jump livingroom_morning_talk_polite
 
 label livingroom_morning_talk_rude:
-    r annoyed "You’re being awfully rude for what you did last night, {nw}"
+    Rain annoyed "You’re being awfully rude for what you did last night, {nw}"
     extend "that’s not cool Peyton."
 
     menu:
-        r "That's not cool Peyton."
+        Rain "That's not cool Peyton."
         "What do you mean what I did last night? I don’t remember doing anything!":
             pass
         "I really have no idea what you’re talking about, Rain.":
             pass
 
-    r angry "Stop joking around. {w=1.5}"
+    Rain angry "Stop joking around. {w=1.5}"
     extend "I have to go right now, I'm going to be late for my shift. {nw}"
     extend "We can talk about it later."
     jump livingroom_morning_talk_unresolved
 
 label livingroom_morning_talk_polite:
-    r unhappy eyecontact "Last night you borrowed my laptop without asking me about it. {w=.5}"
+    Rain unhappy eyecontact "Last night you borrowed my laptop without asking me about it. {w=.5}"
     extend "I normally don’t mind but I couldn’t find it this morning, {nw}"
     extend "and I thought I left it at the café until I found it. I was really worried!"
 
@@ -90,7 +90,7 @@ label livingroom_morning_talk_polite:
             "Are you sure that I did that? Maybe you could have misplaced it before you left."
             pass
 
-    r annoyed "I was gone all day yesterday, I couldn’t have done it. When I got home last night you were already asleep, and my laptop was missing."
+    Rain annoyed "I was gone all day yesterday, I couldn’t have done it. When I got home last night you were already asleep, and my laptop was missing."
 
     menu:
         "My laptop was missing."
@@ -117,18 +117,18 @@ label livingroom_morning_talk_unresolved:
         "Turn up the volume to catch what they're saying":
             jump livingroom_ufo_news
 
-define s = Character(_("Skeptical Anchor"))
-define b = Character(_("Believer Anchor"))
+define SkepticalAnchor = Character(_("Skeptical Anchor"))
+define BelieverAnchor = Character(_("Believer Anchor"))
 
 label livingroom_ufo_news:
     $ flag.saw_ufo_news = True
-    s "We’ve heard stories about UFOs before, and nothing has ever come of it. What makes this time any different?"
+    SkepticalAnchor "We’ve heard stories about UFOs before, and nothing has ever come of it. What makes this time any different?"
 
-    b "The amount of people that have witnessed it, and the photos! You can’t deny those photos. These people took the photos of before and after and one minute those things were there, and the next they weren’t."
+    BelieverAnchor "The amount of people that have witnessed it, and the photos! You can’t deny those photos. These people took the photos of before and after and one minute those things were there, and the next they weren’t."
 
-    s "It could be any number of things, a light flare on the camera or a shadow from anything that’s nearby."
+    SkepticalAnchor "It could be any number of things, a light flare on the camera or a shadow from anything that’s nearby."
 
-    b "We’ve already ruled out all of those possibilities, our team has gone out there and tried every trick in the book to see if they can recreate these photos and nothing that they tried worked. We could have seen an {i}actual UFO{/i}! Think of all the possibilities that could come from this!"
+    BelieverAnchor "We’ve already ruled out all of those possibilities, our team has gone out there and tried every trick in the book to see if they can recreate these photos and nothing that they tried worked. We could have seen an {i}actual UFO{/i}! Think of all the possibilities that could come from this!"
 
     "You’re on The UFOrum before the segment is even over."
     extend "The news segment has drawn a few new members to the forum, who are hotly debating the correct pronunciation of “UFOrum”."
