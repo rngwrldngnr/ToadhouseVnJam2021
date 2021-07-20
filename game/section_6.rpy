@@ -25,7 +25,8 @@ label call_rain_a:
             jump call_rain_a1
 
         "You always avoid confrontation! No wonder we fight.":
-            jump call_rain_a2
+            p "You always avoid confrontation! No wonder we fight."
+            jump call_narration
 
 label call_rain_a1:
     p "You’re right, I’m sorry. I just want to stop avoiding this."
@@ -43,11 +44,6 @@ label call_rain_a1:
         "That's not good enough":
             p "That’s not good enough. You’ll still be distracted."
             jump call_narration
-
-label call_rain_a2:
-    p "You always avoid confrontation! No wonder we fight."
-
-    "TODO call_rain_a2"
 
 label call_rain_b:
     p "I wanted to talk things out, but it can wait."

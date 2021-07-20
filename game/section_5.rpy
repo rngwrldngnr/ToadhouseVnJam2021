@@ -78,7 +78,7 @@ label narration_2:
     jump restart_loop
 
 label alex_2:
-    a "We are here to see if your planet is ready to join our galactic federation of planets. You have been chosen as a test subject. We are observing your ability to peacefully resolve a conflict. When you fail, wipe your memory and make you try again."
+    a "We are here to see if your planet is ready to join our galactic federation of planets. You have been chosen as a test subject. We are observing your ability to peacefully resolve a conflict. When you fail, we wipe your memory and make you try again."
 
     menu:
         "That seems like an ill-conceived experiment doomed to fail.":
@@ -102,7 +102,12 @@ label narration_a4:
     jump end_1
 
 label narration_a3:
-    "TODO narration_a3"
+    "You take a hard look at the smooth steel of the ship around you, willing yourself to remember."
+    "A piercing headache is building behind your temples."
+    "You look Alex in the eye and for a moment you know exactly how many times you’ve been here before."
+    "A second later, you don’t remember."
+    "You don’t remember."
+    jump restart_loop
 
 label narration_b:
     "The alien seems calmed by your willingness to answer questions. You can’t be certain, though. The facial expressions seem similar to yours, but this is an alien."
@@ -123,4 +128,15 @@ label narration_B1:
     jump restart_loop
 
 label alex_b2:
-    "TODO alex_b2"
+    a "Your short-term memory is still good."
+    a "Excellent."
+    a "Not to worry, you will be out of here soon enough."
+    a "We have no reason to hurt you."
+
+    "You don’t know if that was meant to be reassuring, but if it was, it failed."
+    "You turn around, looking for the exit, but the door you came in through is no longer there."
+    "A soft humming noise is in the air now."
+    "Maybe the door was in a different place? You don’t remember."
+    "You don’t remember."
+
+    jump restart_loop
