@@ -45,7 +45,10 @@ label cafe_no_rain:
     "When you finally can’t justify taking up a table any longer without ordering another drink, it’s time to go."
 
     "You still haven’t figured out what to do about Rain, but maybe a walk will help."
-    jump walk_in_the_park
+
+    menu:
+        "Take a walk":
+            jump walk_in_the_park
 
 label cafe_about_rain:
     p "I think Rain and I had a fight last night?"
@@ -143,7 +146,9 @@ label cafe_complain:
     "Your friends won’t always be in the mood to help you figure out your stuff, but Farah is always up for a decaf latte and a terrible pun."
     "You’ll schedule in some time for stuff-figuring-outing afterwards."
 
-    jump walk_in_the_park
+    menu:
+        "Take a walk":
+            jump walk_in_the_park
 
 label cafe_rain_late:
     f "Yeah, she told me. I hope you two work things out."
