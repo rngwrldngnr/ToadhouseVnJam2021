@@ -22,9 +22,7 @@ label livingroom_morning_talkn:
     "You’re surprised the Monstera plant is still alive, because you don’t have much of a green thumb, but it seems to be doing well."
     "Oh, you’ve left some coffee cups on the table. You should take care of those later."
 
-    show rain neutral:
-        zoom .8
-        ypos 1.45
+    show rain neutral
     "The TV is on, but the volume is too low to make out what the newsreaders are saying."
     "As you’re patting your pockets to check you have your wallet and keys, {nw}"
     extend "Rain walks past with an empty plate."
