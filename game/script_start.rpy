@@ -47,3 +47,6 @@ label start_debug:
 
         "Rain talk":
             jump livingroom
+
+        "End 1":
+            jump end_1
