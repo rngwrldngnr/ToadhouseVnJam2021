@@ -11,7 +11,9 @@ label livingroom:
     "She’s left her dirty dishes on the counter, which is unlike her."
     "A closer look at the counter reveals a note from Rain."
     "\“We need to talk.\” {w}Oh boy."
-    "You’ll have to worry about that later, though. Time to meet up with Farah."
+    "Rain never “needs to talk” unless something is very wrong."
+    "Did you do something to upset her?"
+    "You’ll have to worry about that later. It’s time to meet up with Farah."
     jump cafe
 
 
@@ -61,37 +63,36 @@ label livingroom_morning_talk_rude:
 
     menu:
         Rain "That's not cool Peyton."
-        "What do you mean what I did last night? I don’t remember doing anything!":
+        "I don’t remember doing anything last night!":
             pass
-        "I really have no idea what you’re talking about, Rain.":
+        "I’m sorry, I have no idea what you’re talking about.":
             pass
 
     Rain angry "Stop joking around. {w=1.5}"
-    extend "I have to go right now, I'm going to be late for my shift. {nw}"
+    extend "I have to go, or I’ll be late for my shift. {nw}"
     extend "We can talk about it later."
     jump livingroom_morning_talk_unresolved
 
 label livingroom_morning_talk_polite:
-    Rain unhappy eyecontact "Last night you borrowed my laptop without asking me about it. {w=.5}"
-    extend "I normally don’t mind but I couldn’t find it this morning, {nw}"
-    extend "and I thought I left it at the café until I found it. I was really worried!"
+    Rain unhappy eyecontact "Last night you borrowed my laptop without asking! {w=.5}"
+    extend "I normally don’t mind, but I couldn’t find it this morning. {nw}"
+    extend "I thought someone took it from my bag at the café yesterday until I saw it sticking out from under the pillows on the couch. Your notebook was on top. I was really worried!"
 
     menu:
         "I was really worried!"
 
-        "I don’t remember doing that at all.":
-            "I don’t remember doing that at all. I must have been more tired than I thought, I’m sorry."
-            extend "I’ll remember to ask you before borrowing anything of yours again."
+        "I must have forgotten I took it. I’m sorry.":
+            "I must have forgotten I took it. I’m sorry."
             jump end_2
 
-        "Are you sure that I did that?":
-            "Are you sure that I did that? Maybe you could have misplaced it before you left."
+        "Maybe you misplaced it.":
+            "Maybe you misplaced it. You need to be more careful."
             pass
 
-    Rain annoyed "I was gone all day yesterday, I couldn’t have done it. When I got home last night you were already asleep, and my laptop was missing."
+    Rain annoyed "I always keep it in the same place. Besides, your notebook was right there!"
 
     menu:
-        "My laptop was missing."
+        "Besides, your notebook was right there!"
 
         "I didn’t drink last night, and I honestly don’t remember doing it. I’m sorry though, it wasn’t cool to take something of yours without asking.":
             pass
@@ -119,11 +120,11 @@ label livingroom_ufo_news:
     $ flag.saw_ufo_news = True
     SkepticalAnchor "We’ve heard stories about UFOs before, and nothing has ever come of it. What makes this time any different?"
 
-    BelieverAnchor "The amount of people that have witnessed it, and the photos! You can’t deny those photos. These people took the photos of before and after and one minute those things were there, and the next they weren’t."
+    BelieverAnchor "The number of witnesses, and the videos! You can’t deny those videos. They show an unidentified flying object appearing and the next second it’s gone!"
 
-    SkepticalAnchor "It could be any number of things, a light flare on the camera or a shadow from anything that’s nearby."
+    SkepticalAnchor "It could be any number of things! A light flare on the camera or a shadow from something moving nearby. The footage was probably doctored!"
 
-    BelieverAnchor "We’ve already ruled out all of those possibilities, our team has gone out there and tried every trick in the book to see if they can recreate these photos and nothing that they tried worked. We could have seen an {i}actual UFO{/i}! Think of all the possibilities that could come from this!"
+    BelieverAnchor "We’ve already ruled out all of those possibilities! Our team has gone out there and tried every trick in the book to see if they could recreate the effect and nothing worked. We could have seen an {i}actual UFO{/i}! Think about the implications!"
 
     "You’re on The UFOrum before the segment is even over."
     extend "The news segment has drawn a few new members to the forum, who are hotly debating the correct pronunciation of “UFOrum”."
