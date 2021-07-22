@@ -1,7 +1,7 @@
 label end_1:
     scene bg park ufo with fade
-    "You stumble out of the UFO on shaky legs. "
-    "You like to think you have an open mind when it comes to things the world isn’t ready to believe, but this has surpassed all expectations. "
+    "You stumble out of the UFO on shaky legs."
+    "You like to think you have an open mind when it comes to things the world isn’t ready to believe, but this has surpassed all expectations."
     scene bg park with dissolve
     "You’re not ready to think about the implications yet, but you are ready to make some dinner and talk about the argument with Rain."
     scene bg livingroom
@@ -17,9 +17,9 @@ label end_1:
     scene bg bedroom with dissolve
     "You go to bed satisfied and exhilarated."
     "Aliens?!"
-    "Right now, though, you’re just happy you didn’t have to go to bed angry. {w}You’ll deal with the world-shattering implications of this discovery tomorrow."
+    "Right now, though, you’re just happy you didn’t have to go to bed angry."
+    "You’ll deal with the world-shattering implications of this discovery tomorrow."
     scene black with fade
-    "{b}ENDING 1{/b}"
 
     jump exit_time_loop
 

@@ -10,12 +10,13 @@ label livingroom:
     "You don’t see your flatmate Rain, but you can still smell the fried eggs she always has for breakfast."
     "She’s left her dirty dishes on the counter, which is unlike her."
     "A closer look at the counter reveals a note from Rain."
-    "\“We need to talk.\” {w}Oh boy."
+    "\“We need to talk.\”"
+    "Oh boy."
     "Rain never “needs to talk” unless something is very wrong."
     "Did you do something to upset her?"
     "You’ll have to worry about that later. It’s time to meet up with Farah."
-    jump cafe
 
+    jump cafe
 
 label livingroom_morning_talkn:
     "You rush into the living room to grab your stuff."
@@ -23,15 +24,11 @@ label livingroom_morning_talkn:
     "It’s one of the cosiest areas in your home, and you’ve often fallen asleep on that couch while watching movies."
     "You’re surprised the Monstera plant is still alive, because you don’t have much of a green thumb, but it seems to be doing well."
     "Oh, you’ve left some coffee cups on the table. You should take care of those later."
-
-    show rain neutral
     "The TV is on, but the volume is too low to make out what the newsreaders are saying."
-    "As you’re patting your pockets to check you have your wallet and keys, {nw}"
-    extend "Rain walks past with an empty plate."
-    "You can still smell the fried eggs she always has for breakfast and it’s making you peckish."
-    "Rain usually has a permanent case of resting happy face, {nw}"
+    "As you’re patting your pockets to check you have your wallet and keys, Rain walks past with an empty plate."
     show rain unhappy
-    extend "but right now she doesn’t look cheerful."
+    "You can still smell the fried eggs she always has for breakfast and it’s making you peckish."
+    "Rain usually has a permanent case of resting happy face, but right now she doesn’t look cheerful."
 
     menu:
         "but right now she doesn’t look cheerful."
@@ -43,14 +40,15 @@ label livingroom_morning_talkn:
             jump livingroom_morning_talk_start
 
 label livingroom_morning_talk_skip:
-    "You seek a moment of eye contact with Rain to give her a reassuring smile and nod. {nw}"
+    "You seek a moment of eye contact with Rain to give her a reassuring smile and nod."
     show rain unhappy eyecontact
-    extend "Your flawless comforting technique is not very effective, {nw}"
-    extend "but you don’t have time to talk right now. You are meeting Farah at the café."
+    "Your flawless comforting technique is not very effective"
+    "but you don’t have time to talk right now. You are meeting Farah at the café."
     jump cafe
 
 label livingroom_morning_talk_start:
     Rain unhappy eyecontact "You mean you really don’t know what’s bothering me?"
+
     menu:
         "If I did I wouldn’t be asking.":
             jump livingroom_morning_talk_rude
@@ -58,31 +56,34 @@ label livingroom_morning_talk_start:
             jump livingroom_morning_talk_polite
 
 label livingroom_morning_talk_rude:
-    Rain annoyed "You’re being awfully rude for what you did last night, {nw}"
-    extend "that’s not cool Peyton."
+    Rain annoyed "You’re being awfully rude for what you did last night."
+    Rain "That’s not cool Peyton."
 
     menu:
         Rain "That's not cool Peyton."
+        
         "I don’t remember doing anything last night!":
             pass
         "I’m sorry, I have no idea what you’re talking about.":
             pass
 
-    Rain angry "Stop joking around. {w=1.5}"
-    extend "I have to go, or I’ll be late for my shift. {nw}"
-    extend "We can talk about it later."
+    Rain angry "Stop joking around."
+    Rain "I have to go, or I’ll be late for my shift."
+    Rain "We can talk about it later."
+
     jump livingroom_morning_talk_unresolved
 
 label livingroom_morning_talk_polite:
-    Rain unhappy eyecontact "Last night you borrowed my laptop without asking! {w=.5}"
-    extend "I normally don’t mind, but I couldn’t find it this morning. {nw}"
-    extend "I thought someone took it from my bag at the café yesterday until I saw it sticking out from under the pillows on the couch. Your notebook was on top. I was really worried!"
+    Rain unhappy eyecontact "Last night you borrowed my laptop without asking!"
+    Rain "I normally don’t mind, but I couldn’t find it this morning."
+    Rain "I thought someone took it from my bag at the café yesterday until I saw it sticking out from under the pillows on the couch. Your notebook was on top."
+    Rain "I was really worried!"
 
     menu:
-        "I was really worried!"
+        Rain "I was really worried!"
 
         "I must have forgotten I took it. I’m sorry.":
-            "I must have forgotten I took it. I’m sorry."
+            Payton "I must have forgotten I took it. I’m sorry."
             jump end_2
 
         "Maybe you misplaced it.":
@@ -104,10 +105,10 @@ label livingroom_morning_talk_polite:
 
 label livingroom_morning_talk_unresolved:
     "Rain leaves."
-    extend "This is definitely a conversation to pick up again later."
-    extend "Then the words BREAKING NEWS and its accompanying sting on the TV do their job of catching your attention."
-    extend "Your very bored-looking local newsreader is joined by a frazzled colleague."
-    extend "There’s a blurry picture on the screen that’s very similar to the one in the newspaper you picked up yesterday."
+    "This is definitely a conversation to pick up again later."
+    "Then the words BREAKING NEWS and its accompanying sting on the TV do their job of catching your attention."
+    "Your very bored-looking local newsreader is joined by a frazzled colleague."
+    "There’s a blurry picture on the screen that’s very similar to the one in the newspaper you picked up yesterday."
 
     menu:
         "You're late. Leave to meet Farah.":
@@ -118,23 +119,31 @@ label livingroom_morning_talk_unresolved:
 
 label livingroom_ufo_news:
     $ flag.saw_ufo_news = True
-    SkepticalAnchor "We’ve heard stories about UFOs before, and nothing has ever come of it. What makes this time any different?"
 
-    BelieverAnchor "The number of witnesses, and the videos! You can’t deny those videos. They show an unidentified flying object appearing and the next second it’s gone!"
+    SkepticalAnchor "We’ve heard stories about UFOs before, and nothing has ever come of it."
+    SkepticalAnchor "What makes this time any different?"
 
-    SkepticalAnchor "It could be any number of things! A light flare on the camera or a shadow from something moving nearby. The footage was probably doctored!"
+    BelieverAnchor "The number of witnesses, and the videos!"
+    BelieverAnchor "You can’t deny those videos."
+    BelieverAnchor "They show an unidentified flying object appearing and the next second it’s gone!"
 
-    BelieverAnchor "We’ve already ruled out all of those possibilities! Our team has gone out there and tried every trick in the book to see if they could recreate the effect and nothing worked. We could have seen an {i}actual UFO{/i}! Think about the implications!"
+    SkepticalAnchor "It could be any number of things!"
+    SkepticalAnchor "A light flare on the camera or a shadow from something moving nearby. The footage was probably doctored!"
+    SkepticalAnchor "The footage was probably doctored!"
+
+    BelieverAnchor "We’ve already ruled out all of those possibilities!"
+    BelieverAnchor "Our team has gone out there and tried every trick in the book to see if they could recreate the effect and nothing worked."
+    BelieverAnchor "We could have seen an {i}actual UFO{/i}!"
+    BelieverAnchor "Think about the implications!"
 
     "You’re on The UFOrum before the segment is even over."
-    extend "The news segment has drawn a few new members to the forum, who are hotly debating the correct pronunciation of “UFOrum”."
-    extend "You’d been seeing the same witnesses and pictures pop up, of course, but official news outlets don’t usually take these things that seriously."
-    extend "The forum had agreed that this recent evidence was overwhelming, but you had to admit that even the most cautious among you had been disappointed by false hope before."
-    extend "Still, this seemed more than a slow news day to you."
-    extend "You’re neck-deep in the latest thread and have just reported a rude comment about the red-headed newscaster to the moderators {nw}"
+    "The news segment has drawn a few new members to the forum, who are hotly debating the correct pronunciation of “UFOrum”."
+    "You’d been seeing the same witnesses and pictures pop up, of course, but official news outlets don’t usually take these things that seriously."
+    "The forum had agreed that this recent evidence was overwhelming, but you had to admit that even the most cautious among you had been disappointed by false hope before."
+    "Still, this seemed more than a slow news day to you."
+    "You’re neck-deep in the latest thread and have just reported a rude comment about the red-headed newscaster to the moderators when you realise a lot of time has passed. Whoops."
     $ add_minutes(60)
-    extend "when you realise a lot of time has passed. Whoops."
-    extend "You were supposed to meet Farah for lunch. Time to go."
+    "You were supposed to meet Farah for lunch. Time to go."
 
     $ late_for_cafe = True
     jump cafe

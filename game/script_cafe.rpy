@@ -6,10 +6,9 @@ label cafe:
     "It’s such a relaxing smell, with an undertone of pastries and other sweets."
     "The cafe has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it."
     "It’s mostly quiet, a few other patrons are talking and you can hear the blender mixing some sort of icy drink."
-
-    "Farah waves at you from their seat. {nw}"
+    "Farah waves at you from their seat."
     show farah neutral at center
-    extend "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you would not hesitate to bet is decaffeinated."
+    "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you would not hesitate to bet is decaffeinated."
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
     "You avoid the croissants—this place has not yet realised that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
 
@@ -41,7 +40,6 @@ label cafe_no_rain:
     "You came here to catch up with Farah."
     "You ask them about their new cat and spend the rest of your time together slowly sipping your massive drink and looking at pictures of a small cat trying to use a bigger, much older cat as a pillow."
     "When you finally can’t justify taking up a table any longer without ordering another drink, it’s time to go."
-
     "You still haven’t figured out what to do about Rain, but maybe a walk will help."
 
     menu:
