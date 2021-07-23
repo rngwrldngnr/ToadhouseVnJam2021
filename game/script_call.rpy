@@ -6,7 +6,7 @@ label call_rain:
     "Phone calls are the worst way to communicate, but one of the only ways to talk to your flatmate directly without the risk of your tone of voice being misinterpreted."
     "Time for a call."
 
-    Rain "What is it, Payton? I don’t have time to talk right now."
+    Rain "What is it, Peyton? I don’t have time to talk right now."
 
     menu:
         "Does that mean “I don’t want to talk?” as usual?":
@@ -49,7 +49,7 @@ label call_rain_b:
     Peyton "I wanted to talk things out, but it can wait."
 
     Rain "Good, I’m glad."
-    Rain "I do want to talk things out, Payton."
+    Rain "I do want to talk things out, Peyton."
     Rain "It just makes me nervous when we fight."
 
     menu:

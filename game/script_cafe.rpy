@@ -18,7 +18,7 @@ label cafe:
         jump cafe_on_time
 
 label cafe_on_time:
-    Farah "Payton, how’s it going?"
+    Farah "Peyton, how’s it going?"
     Farah "I got here before you and it felt rude not to order, but I promise the caffeine in this decaf latte has barely hit my bloodstream."
     Farah "How have you been?"
 
@@ -32,7 +32,7 @@ label cafe_on_time:
 label cafe_no_rain:
     Peyton "I’m alright, how about you?"
 
-    Farah "I’ve got a Payton, I’ve got a coffee."
+    Farah "I’ve got a Peyton, I’ve got a coffee."
     Farah "Right now is looking good to me."
 
     "You’re inclined to agree."
@@ -93,7 +93,7 @@ label farah_b2:
             jump walk_in_the_park
 
 label farah_b3:
-    Farah "Rain is one of my closest friends, Payton, of course we talk!"
+    Farah "Rain is one of my closest friends, Peyton, of course we talk!"
     Farah "I know she’s mad at you, but you don’t have to take it out on me."
     Farah "Look, I know you’re upset, but do you think you can set it aside for an hour so we can spend some time together?"
     Farah "You can pick it up with Rain later."
@@ -125,7 +125,7 @@ label farah_narration:
             jump call_rain
 
 label cafe_late:
-    Farah "Payton, I’ve practically finished my coffee already. You’re so late, what happened?"
+    Farah "Peyton, I’ve practically finished my coffee already. You’re so late, what happened?"
 
     menu:
         "Ugh, the world hates me today. Everything’s going wrong.":

@@ -83,7 +83,7 @@ label livingroom_morning_talk_polite:
         Rain "I was really worried!"
 
         "I must have forgotten I took it. I’m sorry.":
-            Payton "I must have forgotten I took it. I’m sorry."
+            Peyton "I must have forgotten I took it. I’m sorry."
             jump end_2
 
         "Maybe you misplaced it.":
