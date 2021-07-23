@@ -16,15 +16,22 @@ label ufo_start:
 
     menu:
         "I could ask you the same questions.":
-            jump alien_talk_a
-        "The door was open. I thought I’d take a look.":
-            jump narration_b
+            Peyton "I could ask you the same questions."
+            jump ufo_narration_a
 
-label alien_talk_a:
-    "The alien seems… nervous? Angry? Insulted?"
+        "The door was open. I thought I’d take a look.":
+            Peyton "The door was open. I thought I’d take a look."
+            jump ufo_narration_b
+
+label ufo_narration_a:
+    "The alien seems…"
+    extend " nervous?"
+    extend " Angry?"
+    extend " Insulted?"
+
     "It’s tough to tell."
     "The helmet’s in the way and you have no idea if your human interpretations of facial expressions apply to this alien."
-    "That thought makes a nervous giggle burst up inside of you. An alien!"
+    "That thought makes a nervous giggle burst up inside of you. An {i}alien!{/i}"
 
     Alien "You can call me Alex."
 
@@ -35,33 +42,36 @@ label alien_talk_a:
 
     menu:
         "Alright, I don’t want any trouble.":
-            jump alien_talk_b_1_2
+            Peyton "Alright, I don’t want any trouble."
+            jump ufo_narration_b1_2
+
         "Wait, you’re experimenting on us? That’s so cliché.":
+            Peyton "Wait, you’re experimenting on us? That’s so cliché."
             pass
 
-    Alex "Do not insult that which you do not understand. We are doing important work."
+    Alex "Do not insult that which you do not understand."
+    Alex "We are doing important work."
 
     menu:
         "Okay, I’m getting bad vibes here. I’ll leave.":
-            jump narration_2
+            Peyton "Okay, I’m getting bad vibes here. I’ll leave."
+            jump ufo_narration_a2
+
         "You’re right, I don’t understand. Explain it to me.":
-            jump alex_2
+            Peyton "You’re right, I don’t understand. Explain it to me."
+            jump ufo_alex_a2
 
-label alien_talk_b_1_2:
-    "Wait, did you tell Alex your name? You don’t remember."
-    "You don’t remember."
-    jump restart_loop
-
-label narration_2:
-    "The alien looks relieved, but again, you can’t be 100% sure."
+label ufo_narration_a2:
+    "The alien looks relieved, but again, you can’t be 100\% sure."
     "The only thing you’re certain of is that Alex definitely doesn’t want you to be here."
     "Those suspicions are immediately confirmed when you notice another alien sneak up behind you."
     "A second later, you’re no longer worried at all."
     "Why were you here again?"
+    # TODO: Fade to black?
     "You don’t remember."
     jump restart_loop
 
-label alex_2:
+label ufo_alex_a2:
     Alex "We are here to see if your planet is ready to join our galactic federation of planets."
     Alex "You have been chosen as a test subject."
     Alex "We are observing your ability to peacefully resolve a conflict."
@@ -69,21 +79,27 @@ label alex_2:
 
     menu:
         "That seems like an ill-conceived experiment doomed to fail.":
-            jump alex_a3
-        "Wait, you wipe my memory? Have I been here before?":
-            jump narration_a3
+            Peyton "That seems like an ill-conceived experiment doomed to fail."
+            jump ufo_alex_a3
 
-label alex_a3:
+        "Wait, you wipe my memory? Have I been here before?":
+            Peyton "Wait, you wipe my memory? Have I been here before?"
+            jump ufo_narration_a3
+
+label ufo_alex_a3:
     Alex "That would be a hurtful statement if I were sensitive to human emotions."
     Alex "Why would you say such a thing?"
 
     menu:
         "Your experiment is cruel and inhumane!":
+            Peyton "Your experiment is cruel and inhumane!"
             jump end_4
-        "I can’t learn and grow if you wipe my memory!":
-            jump narration_a4
 
-label narration_a4:
+        "I can’t learn and grow if you wipe my memory!":
+            Peyton "I can’t learn and grow if you wipe my memory!"
+            jump ufo_narration_a4
+
+label ufo_narration_a4:
     "Alex contemplates your words."
     "As the alien considers your argument, you look around to see if anyone is trying to sneak up behind you to wipe your mind."
     "Another alien catches your eye, but it doesn’t look like you’re about to get zapped with some kind of mind-wiping device."
@@ -94,39 +110,51 @@ label narration_a4:
 
     jump end_1
 
-label narration_a3:
+label ufo_narration_a3:
     "You take a hard look at the smooth steel of the ship around you, willing yourself to remember."
     "A piercing headache is building behind your temples."
     "You look Alex in the eye and for a moment you know exactly how many times you’ve been here before."
     "A second later, you don’t remember."
+    # TODO: Fade to black?
     "You don’t remember."
     jump restart_loop
 
-label narration_b:
+label ufo_narration_b:
     "The alien seems calmed by your willingness to answer questions."
     "You can’t be certain, though. The facial expressions seem similar to yours, but this is an alien."
 
-    Alex "Of course. Curiosity is only natural."
-    Alex "You can call me Alex. Would you like a tour?"
+    Alien "Of course. Curiosity is only natural."
+    Alien "You can call me Alex."
 
     menu:
-        "Yes, please!":
-            jump narration_B1
-        "Wait, I thought you said I shouldn’t be here?":
-            jump alex_b2
+        Alex "Would you like a tour?"
 
-label narration_B1:
+        "Yes, please!":
+            Peyton "Yes, please!"
+            jump ufo_narration_b1
+
+        "Wait, I thought you said I shouldn’t be here?":
+            Peyton "Wait, I thought you said I shouldn’t be here?"
+            jump ufo_alex_b2
+
+label ufo_narration_b1:
     "A wall slides away to reveal a door."
     "Alex guides you through a smooth hallway."
     "You wonder what they use for electricity."
     "The walls are humming and you can smell a scent you can only describe as energetic."
     "You are led into a small, warmly lit room where Alex invites you to sit down. "
 
-    Alex "Just wait here a moment, Payton. I will take care of you."
+    Alex "Just wait here a moment, Peyton. I will take care of you."
 
+    jump ufo_narration_b1_2
+
+label ufo_narration_b1_2:
+    "Wait, did you tell Alex your name? You don’t remember."
+    # TODO: Fade to black?
+    "You don’t remember."
     jump restart_loop
 
-label alex_b2:
+label ufo_alex_b2:
     Alex "Your short-term memory is still good."
     Alex "Excellent."
     Alex "Not to worry, you will be out of here soon enough."
@@ -136,6 +164,7 @@ label alex_b2:
     "You turn around, looking for the exit, but the door you came in through is no longer there."
     "A soft humming noise is in the air now."
     "Maybe the door was in a different place? You don’t remember."
+    # TODO: Fade to black?
     "You don’t remember."
 
     jump restart_loop

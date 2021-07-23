@@ -21,9 +21,9 @@ label walk_in_the_park:
                 jump end_2
 
     else:
-        scene bg park ufo with dissolve
-
-        "It’s unassuming, but with a double take you realize… wait, is that a UFO?!"
+        "It’s unassuming, but with a double take you realize…"
+        scene bg park ufo with dissolve  # TODO: See if we can do this without hiding the text?
+        extend " wait, is that a UFO?!"
         "So the papers weren’t lying!"
         "It’s unlike any UFO you’ve ever seen, the movies don’t do it justice."
         "You could have sworn it was almost camouflaged in with everything else, and that if you hadn't taken a second look you might have completely missed it."
