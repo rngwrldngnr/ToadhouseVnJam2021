@@ -6,11 +6,11 @@ label end_1:
     "You’re not ready to think about the implications yet, but you are ready to make some dinner and talk about the argument with Rain."
     scene bg livingroom
     show rain neutral at right
-    show peyton neutral at left
+    show payton neutral at left
     with dissolve
     "When she suggests putting on an episode of X-Files in the background while you eat, you suggest Jurassic Park instead."
     show rain happy
-    show peyton happy
+    show payton happy
     "Over dinner and a movie you both know by heart, you talk things out in a non-confrontational way. "
     "You promise to take more notes so you don’t forget as much, while Rain promises to try harder to address frustrations before they become insurmountable problems. "
 

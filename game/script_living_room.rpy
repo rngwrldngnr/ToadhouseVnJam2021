@@ -57,10 +57,10 @@ label livingroom_morning_talk_start:
 
 label livingroom_morning_talk_rude:
     Rain annoyed "You’re being awfully rude for what you did last night."
-    Rain "That’s not cool Peyton."
+    Rain "That’s not cool Payton."
 
     menu:
-        Rain "That's not cool Peyton."
+        Rain "That's not cool Payton."
         
         "I don’t remember doing anything last night!":
             pass
@@ -83,7 +83,7 @@ label livingroom_morning_talk_polite:
         Rain "I was really worried!"
 
         "I must have forgotten I took it. I’m sorry.":
-            Peyton "I must have forgotten I took it. I’m sorry."
+            Payton "I must have forgotten I took it. I’m sorry."
             jump end_2
 
         "Maybe you misplaced it.":

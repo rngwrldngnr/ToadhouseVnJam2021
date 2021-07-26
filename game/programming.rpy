@@ -4,7 +4,7 @@ label test_cafe:
     "This scene is just for testing sizing and visible portion for the character art"
 label change:
 
-    show peyton neutral at left:
+    show payton neutral at left:
         zoom test.charZoom
         ypos test.level
     show rain neutral at center:

@@ -18,7 +18,7 @@ label cafe:
         jump cafe_on_time
 
 label cafe_on_time:
-    Farah "Peyton, how’s it going?"
+    Farah "Payton, how’s it going?"
     Farah "I got here before you and it felt rude not to order, but I promise the caffeine in this decaf latte has barely hit my bloodstream."
     Farah "How have you been?"
 
@@ -30,9 +30,9 @@ label cafe_on_time:
             jump cafe_about_rain
 
 label cafe_no_rain:
-    Peyton "I’m alright, how about you?"
+    Payton "I’m alright, how about you?"
 
-    Farah "I’ve got a Peyton, I’ve got a coffee."
+    Farah "I’ve got a Payton, I’ve got a coffee."
     Farah "Right now is looking good to me."
 
     "You’re inclined to agree."
@@ -47,18 +47,18 @@ label cafe_no_rain:
             jump walk_in_the_park
 
 label cafe_about_rain:
-    Peyton "I think Rain and I had a fight last night?"
+    Payton "I think Rain and I had a fight last night?"
 
     Farah "You think? You don’t remember?"
     Farah "What’s wrong?"
 
     menu:
         "Rain is upset about something I don’t remember doing.":
-            Peyton "Rain is upset about something I don’t remember doing."
+            Payton "Rain is upset about something I don’t remember doing."
             jump farah_b1
 
         "I’d rather talk about something else right now.":
-            Peyton "I’m okay, I’d rather talk about something else right now."
+            Payton "I’m okay, I’d rather talk about something else right now."
             jump farah_b2
 
 label farah_b1:
@@ -69,11 +69,11 @@ label farah_b1:
 
     menu:
         "She talked to you before she talked to me?!":
-            Peyton "She talked to you before she talked to me?!"
+            Payton "She talked to you before she talked to me?!"
             jump farah_b3
 
         "Yeah, that might help.":
-            Peyton "Yeah, that might help."
+            Payton "Yeah, that might help."
             jump farah_narration
 
 label farah_b2:
@@ -93,7 +93,7 @@ label farah_b2:
             jump walk_in_the_park
 
 label farah_b3:
-    Farah "Rain is one of my closest friends, Peyton, of course we talk!"
+    Farah "Rain is one of my closest friends, Payton, of course we talk!"
     Farah "I know she’s mad at you, but you don’t have to take it out on me."
     Farah "Look, I know you’re upset, but do you think you can set it aside for an hour so we can spend some time together?"
     Farah "You can pick it up with Rain later."
@@ -125,7 +125,7 @@ label farah_narration:
             jump call_rain
 
 label cafe_late:
-    Farah "Peyton, I’ve practically finished my coffee already. You’re so late, what happened?"
+    Farah "Payton, I’ve practically finished my coffee already. You’re so late, what happened?"
 
     menu:
         "Ugh, the world hates me today. Everything’s going wrong.":

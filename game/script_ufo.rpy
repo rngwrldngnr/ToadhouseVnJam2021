@@ -16,11 +16,11 @@ label ufo_start:
 
     menu:
         "I could ask you the same questions.":
-            Peyton "I could ask you the same questions."
+            Payton "I could ask you the same questions."
             jump ufo_narration_a
 
         "The door was open. I thought I’d take a look.":
-            Peyton "The door was open. I thought I’d take a look."
+            Payton "The door was open. I thought I’d take a look."
             jump ufo_narration_b
 
 label ufo_narration_a:
@@ -42,11 +42,11 @@ label ufo_narration_a:
 
     menu:
         "Alright, I don’t want any trouble.":
-            Peyton "Alright, I don’t want any trouble."
+            Payton "Alright, I don’t want any trouble."
             jump ufo_narration_b1_2
 
         "Wait, you’re experimenting on us? That’s so cliché.":
-            Peyton "Wait, you’re experimenting on us? That’s so cliché."
+            Payton "Wait, you’re experimenting on us? That’s so cliché."
             pass
 
     Alex "Do not insult that which you do not understand."
@@ -54,11 +54,11 @@ label ufo_narration_a:
 
     menu:
         "Okay, I’m getting bad vibes here. I’ll leave.":
-            Peyton "Okay, I’m getting bad vibes here. I’ll leave."
+            Payton "Okay, I’m getting bad vibes here. I’ll leave."
             jump ufo_narration_a2
 
         "You’re right, I don’t understand. Explain it to me.":
-            Peyton "You’re right, I don’t understand. Explain it to me."
+            Payton "You’re right, I don’t understand. Explain it to me."
             jump ufo_alex_a2
 
 label ufo_narration_a2:
@@ -79,11 +79,11 @@ label ufo_alex_a2:
 
     menu:
         "That seems like an ill-conceived experiment doomed to fail.":
-            Peyton "That seems like an ill-conceived experiment doomed to fail."
+            Payton "That seems like an ill-conceived experiment doomed to fail."
             jump ufo_alex_a3
 
         "Wait, you wipe my memory? Have I been here before?":
-            Peyton "Wait, you wipe my memory? Have I been here before?"
+            Payton "Wait, you wipe my memory? Have I been here before?"
             jump ufo_narration_a3
 
 label ufo_alex_a3:
@@ -92,11 +92,11 @@ label ufo_alex_a3:
 
     menu:
         "Your experiment is cruel and inhumane!":
-            Peyton "Your experiment is cruel and inhumane!"
+            Payton "Your experiment is cruel and inhumane!"
             jump end_4
 
         "I can’t learn and grow if you wipe my memory!":
-            Peyton "I can’t learn and grow if you wipe my memory!"
+            Payton "I can’t learn and grow if you wipe my memory!"
             jump ufo_narration_a4
 
 label ufo_narration_a4:
@@ -130,11 +130,11 @@ label ufo_narration_b:
         Alex "Would you like a tour?"
 
         "Yes, please!":
-            Peyton "Yes, please!"
+            Payton "Yes, please!"
             jump ufo_narration_b1
 
         "Wait, I thought you said I shouldn’t be here?":
-            Peyton "Wait, I thought you said I shouldn’t be here?"
+            Payton "Wait, I thought you said I shouldn’t be here?"
             jump ufo_alex_b2
 
 label ufo_narration_b1:
@@ -144,7 +144,7 @@ label ufo_narration_b1:
     "The walls are humming and you can smell a scent you can only describe as energetic."
     "You are led into a small, warmly lit room where Alex invites you to sit down. "
 
-    Alex "Just wait here a moment, Peyton. I will take care of you."
+    Alex "Just wait here a moment, Payton. I will take care of you."
 
     jump ufo_narration_b1_2
 
