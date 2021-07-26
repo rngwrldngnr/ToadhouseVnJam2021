@@ -17,7 +17,7 @@ label walk_in_the_park:
 
             "I’ll let Rain cool off a bit.":
                 jump end_3
-            "We need to talk this out properly.":
+            "We need to talk this out right now.":
                 jump end_2
 
     else:

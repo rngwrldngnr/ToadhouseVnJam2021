@@ -57,7 +57,7 @@ label livingroom_morning_talk_start:
 
 label livingroom_morning_talk_rude:
     Rain annoyed "You’re being awfully rude for what you did last night."
-    Rain "That’s not cool Payton."
+    Rain "That’s not cool, Payton."
 
     menu:
         Rain "That's not cool Payton."
