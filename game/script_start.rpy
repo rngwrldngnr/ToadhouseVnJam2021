@@ -9,6 +9,7 @@ default schedule.clock_time = "08:17 AM"
 default inv.charge = False
 default inv.has_key = False
 default knows_key_location = False
+default visited_park_earlier = False
 default late_for_cafe = False
 default flag.saw_ufo_news = False
 

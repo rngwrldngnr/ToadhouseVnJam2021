@@ -1,5 +1,54 @@
+label park_early:
+    $ visited_park_earlier = True
+
+    scene bg park
+
+    "The park is much like any other outdoor area."
+    "It has a path that loops around the side of a lake with a scattering of trees and a wooden bench overlooking the small lake."
+    "It’s unassuming and that’s why you like it."
+    "Its utter blandness seems to have repelled all other visitors today, even the ducks, so the single bench is all yours."
+
+    "You sit down and enjoy the silence, until the quiet is interrupted by a metallic clang."
+    "There’s not usually any metal at the park, so where did that come from?"
+    "You don’t see an immediate source, but you do see that staring off across the water has taken up all the extra time you had before your meeting with Farah."
+    "It’s time to go to the café."
+
+    menu:
+        "Go to the café.":
+            jump cafe
+
+        "Investigate the sound.":
+            pass
+
+    "You have to know what that noise was."
+    "It sounded like it came from an open space between the trees, but you don’t see anything there."
+    "You slowly and methodically walk around the area, straining your ears."
+    "Finally, another sound hits your ears. A soft hum, growing steadily louder, until it stops."
+    "Whatever was here, it’s gone now. Maybe it’ll come back later."
+    "Speaking of later, you are definitely late for your meetup with Farah."
+    $ late_for_cafe = True
+    "You put the weird noise out of your mind for now. Time to head to the café."
+
+    menu:
+        "Go to the café.":
+            jump cafe
+
 label walk_in_the_park:
     scene bg park
+
+    if visited_park_earlier:
+        "The familiar surroundings of the park will help you think about how to resolve your conflict with Rain."
+        "Everything’s still there. Grass, trees, duckless pond, bench, UFO."
+        scene bg park ufo with dissolve
+        "Wait, what?"
+        "You take in the shape in front of you."
+        "It’s not technically a UFO right now, because this unidentified object isn’t flying, but it certainly looks like an alien spaceship."
+        "You circle it, tilting your head, and the shape shimmers."
+        "It almost seems to disappear into the background, but a different angle makes it visible again."
+        "As you approach, you hear the hum from before again. This must have been here the whole time."
+        "As you continue to walk around it, you notice an open hatch."
+
+        jump park_ufo_found
 
     "The park is much like any other outdoor area."
     "It has a path that loops around the side of a lake with a scattering of trees and a wooden bench overlooking the small lake."
@@ -29,10 +78,14 @@ label walk_in_the_park:
         "You could have sworn it was almost camouflaged in with everything else, and that if you hadn't taken a second look you might have completely missed it."
         "As you circle it slowly, you notice an open hatch."
 
-        menu:
-            "What do you do?"
+        jump park_ufo_found
 
-            "This is too much. I did not see this.":
-                jump end_3
-            "I get in there!":
-                jump ufo_start
+label park_ufo_found:
+    menu:
+        "What do you do?"
+
+        "This is too much. I did not see this.":
+            jump end_3
+
+        "I get in there!":
+            jump ufo_start

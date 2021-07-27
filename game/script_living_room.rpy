@@ -45,7 +45,19 @@ label livingroom_morning_talk_skip:
     show rain unhappy eyecontact
     "Your flawless comforting technique is not very effective"
     "but you don’t have time to talk right now. You are meeting Farah at the café."
-    jump cafe
+
+    "As you leave the house, you check your watch and realise it’s earlier than you expected."
+    "Strange, you thought finding your key had taken a lot longer."
+    "Your walk to the café takes you right past the park, so you could easily take a little walk to pass the time."
+    "Farah is usually early too, though, so you could also just go straight to the café."
+
+    menu:
+        "Take a walk in the park.":
+            "You’ve got time, so you decide to stretch your legs and get some fresh air."
+            jump park_early
+
+        "Go to the café early.":
+            jump cafe
 
 label livingroom_morning_talk_start:
     Rain unhappy eyecontact "You mean you really don’t know what’s bothering me?"

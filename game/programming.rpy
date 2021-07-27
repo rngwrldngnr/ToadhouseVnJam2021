@@ -157,6 +157,7 @@ init python:
         set_time(497)
         inv.charge = False
         inv.has_key = False
+        visited_park_earlier = False
         late_for_cafe = False
         flag.saw_ufo_news = False
 
