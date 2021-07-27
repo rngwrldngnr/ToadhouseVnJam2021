@@ -40,7 +40,7 @@ label cafe_no_rain:
     "You came here to catch up with Farah."
     "You ask them about their new cat and spend the rest of your time together slowly sipping your massive drink and looking at pictures of a small cat trying to use a bigger, much older cat as a pillow."
     "When you finally can’t justify taking up a table any longer without ordering another drink, it’s time to go."
-    "You still haven’t figured out what to do about Rain, but maybe a walk will help."
+    "You still haven’t figured out what to do about Rain, but maybe a walk in the park will help."
 
     menu:
         "Take a walk.":
@@ -89,7 +89,9 @@ label farah_b2:
     "You need some more time to clear your head."
 
     menu:
-        "Take a walk.":
+        "A walk in the park is just what you need."
+
+        "Take a walk in the park.":
             jump walk_in_the_park
 
 label farah_b3:
@@ -101,7 +103,7 @@ label farah_b3:
     "Farah’s right."
     "You didn’t come here to get upset at Farah. You came here for a hot caffeinated beverage and some time with a friend."
     "The rest of your time together is still a little uncomfortable, but by the time you wave goodbye you’ve managed to turn the mood around and were even graced with an extra cute picture of Farah’s new cat."
-    "You definitely need some more time to think about your argument with Rain, though. Maybe a walk will help."
+    "You definitely need some more time to think about your argument with Rain, though. Maybe a walk in the park will help."
 
     menu:
         "Take a walk.":
@@ -112,13 +114,14 @@ label farah_narration:
     "There isn’t much to share, because you literally don’t remember what you did, but it’s still good to talk."
     "After a bit, the conversation pivots to Farah’s cats and their new homemade scratching pole."
     "You have a cosy time together and almost forget to drink your coffee before it gets cold."
-    "Farah has also given you some perspective on your argument with Rain."
-    "If she’s discussed it with Farah, it must really bother her a lot."
+    "Farah also gives you something to think about."
+    "If Rain has discussed this with Farah, it must really bother her a lot."
+    "When you finally finish your drinks and say your goodbyes, you decide to walk to the park and find a quiet spot."
 
     menu:
-        "Do you still need some time to process or should you get in touch with Rain right away?"
+        "What’s the next best step? Should you take some time to process everything or call Rain to talk things out right away?"
 
-        "Take a walk.":
+        "Take a walk in the park.":
             jump walk_in_the_park
 
         "Call Rain.":
@@ -140,7 +143,7 @@ label cafe_complain:
 
     "The conversation quickly devolves into jokes about setting up an app that automatically texts your friends to cancel when the stars aren’t in position for your hangout."
     "Your friends won’t always be in the mood to help you figure out your stuff, but Farah is always up for a decaf latte and a terrible pun."
-    "You’ll schedule in some time for stuff-figuring-outing afterwards."
+    "When you’re both ready to go home, you still need some time to think things through, so you head to the park."
 
     menu:
         "Take a walk.":
@@ -162,7 +165,7 @@ label cafe_rain_late:
     "You came here to spend time with Farah, so that’s exactly what you do."
     "Farah tells you all about their new cat and how it’s getting along with their old cat."
     "A break is exactly what you needed."
-    "After you and Farah have exhausted every cat-related line of conversation for the week, they head home and you go for a walk."
+    "After you and Farah have exhausted every cat-related line of conversation for the week, they head home and you go for a walk in the park."
 
     menu:
         "To the park!":

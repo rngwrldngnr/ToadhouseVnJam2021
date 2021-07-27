@@ -36,7 +36,7 @@ label ufo_narration_a:
     Alien "You can call me Alex."
 
     Alex "This is my ship."
-    Alex "I am here to observe the social interactions between the people of this town to see if humans are capable of conflict resolution."
+    Alex "I am here to observe the social interactions between the people of this town to see if humans are capable of growth and complex conflict resolution."
     Alex "Your presence is harming the accuracy of our data."
     Alex "Please follow me. I will take you home."
 
@@ -97,9 +97,15 @@ label ufo_alex_a3:
 
         "I can’t learn and grow if you wipe my memory!":
             Payton "I can’t learn and grow if you wipe my memory!"
-            jump ufo_narration_a4
+            jump ufo_payton_a4
 
-label ufo_narration_a4:
+label ufo_payton_a4:
+    Payton "You say you want to observe how we learn to resolve conflicts, but have you ever seen a human baby?"
+    Payton "The only way they have to solve their problems is to cry!"
+    Payton "I know I have a lot to learn, but I’ll never get there if you don’t let me learn from my mistakes."
+    Payton "Wiping my memory only proves that I can’t solve this one conflict right now."
+    Payton "If you let me try again, knowing what I did wrong last time, I may get a different result!"
+
     "Alex contemplates your words."
     "As the alien considers your argument, you look around to see if anyone is trying to sneak up behind you to wipe your mind."
     "Another alien catches your eye, but it doesn’t look like you’re about to get zapped with some kind of mind-wiping device."

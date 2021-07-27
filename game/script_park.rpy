@@ -2,11 +2,11 @@ label walk_in_the_park:
     scene bg park
 
     "The park is much like any other outdoor area."
-    "It has a path that loops around the side of a lake with a scattering of trees and a singular bench overlooking the small lake."
+    "It has a path that loops around the side of a lake with a scattering of trees and a wooden bench overlooking the small lake."
 
     if not flag.saw_ufo_news:
         "It’s unassuming and that’s why you like it."
-        "Its utter blandness seems to have repelled all other pedestrians today, so the single bench is all yours."
+        "Its utter blandness seems to have repelled all other visitors today, even the ducks, so the single bench is all yours."
         "You take a moment to reflect."
         "Sometimes it seems like Rain’s outbursts come out of nowhere, but you know she has a habit of cropping up frustrations."
         "She avoids confrontations until something finally breaks the dam."

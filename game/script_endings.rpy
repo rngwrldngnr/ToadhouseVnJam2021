@@ -31,6 +31,7 @@ label end_2:
     "Later, when your flatmate gets back from work, you make dinner, put on Jurassic Park in the background, and properly talk things out."
 
     "You go to bed glad you took the time to talk."
+    "You can only imagine how this could have escalated. Today would have ended very differently."
     "Still, it takes you a while to fall asleep."
     "There’s a strange humming noise outside, but you can’t see where it’s coming from."
     "You’re too tired to deal with it now, though, so you’ll just have to see if it’s still a problem tomorrow."

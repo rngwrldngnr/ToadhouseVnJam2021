@@ -48,6 +48,7 @@ label lay_around_waiting_charge:
     "You get back in bed and spend another 45 minutes staring at your dusty ceiling fan."
     $ add_minutes(45)
     "You should really buy one of those dusters on a stick."
+    "As you lie there, the front door slams, and some of the dust comes fluttering down."  # TODO: Flag that roommate has left
     "Your phone isn’t fully charged, but it will be useful in an emergency."
     "If you don’t leave now, you will definitely be late. Time to get up."
     $ inv.charge = True
@@ -61,10 +62,11 @@ label explore_your_room:
     "You take a good look around the room."
     "There are the cat in space and frog with the toadstool posters that you thought would add a little bit of character to your room."
     "The sheets are lavender with a purple duvet to match."
-    "On top of the dresser is your house key!"
-    "You were afraid that you had lost it, but it’s right next to a small frog statue."
+    "There’s a small potted plant on the dresser."
+    "It looks a little sad. You should remember to water it more often."
+    "Right next to it is a small frog statue."
     "On the nightstand is a newspaper with the headline “possible UFO?”"
-    "A  nice addition to your collection."
+    "A nice addition to your collection."
     "Candy and wrappers are scattered over the top."
     "You’ll get to throwing those out later. But where is the key?"
 
@@ -94,13 +96,13 @@ label explore_your_room:
             call check_bedside_table from _call_check_bedside_table
 
         "The dresser drawers.":
-            call check_drawers from _call_check_drawers
+            call check_dresser
 
         "The posters.":
             call check_posters from _call_check_posters
 
-        "The key on the dresser.":
-            call check_dresser from _call_check_dresser
+        "The small potted plant.":
+            call check_potted_plant
 
         "The outside of the bedroom." if inv.has_key:
             $ add_minutes(1)
@@ -120,7 +122,7 @@ label check_bedside_table:
 
     return
 
-label check_drawers:
+label check_dresser:
     $ add_minutes(2)
     "You’re going to have to refold all of these clothes now..."
     if is_key_here(2):
@@ -145,14 +147,15 @@ label check_posters:
 
     return
 
-label check_dresser:
+label check_potted_plant:
     $ add_minutes(2)
-    "That’s your house key. That’ll be useful once you reach the front door."
+    "You lift up the pot to see if you put the key underneath, but no luck."
+    "Just in case, you check inside the pot too."
     if is_key_here(4):
         $ inv.has_key = True
         $ knows_key_location = True
-        "Despite it not being the normal place you keep it, your {i}room key{/i} is on this keyring! You slip it off and pocket both."
+        "Your room key is nestled in the dirt."
     else:
-        extend " Not your room key."
+        "Your room key isn’t here."
 
     return

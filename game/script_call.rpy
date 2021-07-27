@@ -1,10 +1,30 @@
 label call_rain:
     scene bg park
 
+    if inv.charge:
+        jump call_rain_phone_charged
+    else:
+        jump call_rain_no_phone
+
+label call_rain_no_phone:
+    "You decide you don’t want to let this stew any longer."
+    "A text message isn’t enough. This requires a phone call."
+    "You dig your phone out of your pocket, psyching yourself up for the conversation, and look at the screen."
+    "The black screen."
+    "Hold on. Did you forget to charge your phone?"
+    "Shit. Well, that ruins your mood entirely."
+    "Clearly, this is not the time to talk things out."
+    "You’ll just have to see if Rain has calmed down a bit by the time she gets home."
+
+    jump end_3
+
+label call_rain_phone_charged:
     "You decide you don’t want to let this stew any longer."
     "You have your phone on you."
-    "Phone calls are the worst way to communicate, but one of the only ways to talk to your flatmate directly without the risk of your tone of voice being misinterpreted."
-    "Time for a call."
+    "Phone calls are your least favourite way to communicate, but it’s the only way to talk to Rain right away without the risk of your tone of voice being misinterpreted."
+    "You take a short walk to the park, so you can find a place to sit down and call Rain."
+
+    # TODO: This is where the scene should be changed to the park
 
     Rain "What is it, Payton? I don’t have time to talk right now."
 

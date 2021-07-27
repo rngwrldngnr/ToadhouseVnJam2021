@@ -8,6 +8,7 @@ label livingroom:
 
     "You rush into the living room to grab your stuff."
     "You don’t see your flatmate Rain, but you can still smell the fried eggs she always has for breakfast."
+    "You just missed her."
     "She’s left her dirty dishes on the counter, which is unlike her."
     "A closer look at the counter reveals a note from Rain."
     "\“We need to talk.\”"
@@ -25,7 +26,7 @@ label livingroom_morning_talkn:
     "You’re surprised the Monstera plant is still alive, because you don’t have much of a green thumb, but it seems to be doing well."
     "Oh, you’ve left some coffee cups on the table. You should take care of those later."
     "The TV is on, but the volume is too low to make out what the newsreaders are saying."
-    "As you’re patting your pockets to check you have your wallet and keys, Rain walks past with an empty plate."
+    "As you’re patting your pockets to check you have your wallet, phone, and keys, Rain walks past with an empty plate."
     show rain unhappy
     "You can still smell the fried eggs she always has for breakfast and it’s making you peckish."
     "Rain usually has a permanent case of resting happy face, but right now she doesn’t look cheerful."
@@ -121,9 +122,9 @@ label livingroom_ufo_news:
     $ flag.saw_ufo_news = True
 
     SkepticalAnchor "We’ve heard stories about UFOs before, and nothing has ever come of it."
-    SkepticalAnchor "What makes this time any different?"
+    SkepticalAnchor "What makes this time any different, Fox?"
 
-    BelieverAnchor "The number of witnesses, and the videos!"
+    BelieverAnchor "The number of witnesses, Dana, and the videos!"
     BelieverAnchor "You can’t deny those videos."
     BelieverAnchor "They show an unidentified flying object appearing and the next second it’s gone!"
 
