@@ -1,3 +1,24 @@
+label park_first_loop:
+    scene bg park
+
+    "You get to the park and look for a quiet place to sit down, but it’s not as peaceful as usual."
+    "A small group of people is trampling the freshly-mown grass."
+    "They seem an excitable bunch. A lot of hands are being waved around."
+    "Some of those hands are just being used to gesture emphatically, but others are holding some kind of equipment."
+    "The group turns around to inspect a different patch of grass and you realise you know these people."
+    "You met some of them at a recent UFOrum meeting!"
+    "You’re trying to remember their names—you’re confident at least one of them is a Cecil—when you hear a voice behind you."
+
+    AlienShadow "This interference is unacceptable."
+
+    "You turn around to see who’s speaking, but everything starts going black."
+
+    scene black
+
+    AlienShadow "We need to be more careful next time. Try again."
+
+    jump restart_loop
+
 label park_early:
     $ visited_park_earlier = True
 
@@ -35,6 +56,9 @@ label park_early:
 
 label walk_in_the_park:
     scene bg park
+
+    if loop_count == 0:
+        jump park_first_loop
 
     if visited_park_earlier:
         "The familiar surroundings of the park will help you think about how to resolve your conflict with Rain."

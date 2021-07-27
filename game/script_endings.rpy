@@ -47,7 +47,7 @@ label end_3:
     "Your relationship with Rain has taken a dent. If you could try again, you’d probably do things differently."
     "Going to bed angry never feels great, but sometimes you need to take a moment. You’ll try again tomorrow."
 
-    jump start
+    jump restart_loop
 
 label end_4:
     scene black
@@ -56,7 +56,7 @@ label end_4:
     "As you try to make your case, another alien comes up behind you and calmly tells you you have failed at conflict resolution."
     "The experiment is safe, though! You will get another chance."
 
-    jump start
+    jump restart_loop
 
 label exit_time_loop:
     #"TODO exit_time_loop"
@@ -64,4 +64,5 @@ label exit_time_loop:
 
 label restart_loop:
     # play loop restart music
+    $ loop_count = loop_count + 1
     jump start_of_loop
