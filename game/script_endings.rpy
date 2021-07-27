@@ -58,12 +58,8 @@ label end_4:
     jump start
 
 label exit_time_loop:
-    "TODO exit_time_loop"
-    jump end_game_credits
-
-label end_game_credits:
-    "TODO end_game_credits"
-    return
+    #"TODO exit_time_loop"
+    jump credits_start
 
 label restart_loop:
     # play loop restart music
