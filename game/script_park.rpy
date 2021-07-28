@@ -2,12 +2,15 @@ label park_first_loop:
     scene bg park
 
     "You get to the park and look for a quiet place to sit down, but it’s not as peaceful as usual."
+    show park crowd at left
     "A small group of people is trampling the freshly-mown grass."
     "They seem an excitable bunch. A lot of hands are being waved around."
     "Some of those hands are just being used to gesture emphatically, but others are holding some kind of equipment."
     "The group turns around to inspect a different patch of grass and you realise you know these people."
     "You met some of them at a recent UFOrum meeting!"
     "You’re trying to remember their names—you’re confident at least one of them is a Cecil—when you hear a voice behind you."
+
+    show alex shadow at right
 
     AlienShadow "This interference is unacceptable."
 
