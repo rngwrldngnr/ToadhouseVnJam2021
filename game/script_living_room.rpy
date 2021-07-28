@@ -100,20 +100,13 @@ label livingroom_morning_talk_polite:
             jump end_2
 
         "Maybe you misplaced it.":
-            "Maybe you misplaced it. You need to be more careful."
+            Payton "Maybe you misplaced it. You need to be more careful."
             pass
 
     Rain "You know how meticulous I am about my stuff. I always keep it in the same place."
+    Rain "Besides, your notebook was right there!"
 
-    menu:
-        "Besides, your notebook was right there!"
-
-        "You're right, I must have forgotten.":
-            pass
-
-        "You know my memory sucks. It’s not my fault!":
-            pass
-
+    Payton "You know my memory sucks. It’s not my fault!":
     Payton "I know I’m forgetful, but you don’t have to yell at me."
     Payton "I told you I kept forgetting to buy a new laptop battery."
     Payton "You could have reminded me, but instead you’re just blaming me!"
