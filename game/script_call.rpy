@@ -10,9 +10,11 @@ label call_rain_no_phone:
     "You decide you don’t want to let this stew any longer."
     "A text message isn’t enough. This requires a phone call."
     "You dig your phone out of your pocket, psyching yourself up for the conversation, and look at the screen."
+    show rain phone dead
     "The black screen."
     "Hold on. Did you forget to charge your phone?"
     "Shit. Well, that ruins your mood entirely."
+    hide rain
     "Clearly, this is not the time to talk things out."
     "You’ll just have to see if Rain has calmed down a bit by the time she gets home."
 
@@ -25,6 +27,8 @@ label call_rain_phone_charged:
     "You take a short walk to the park, so you can find a place to sit down and call Rain."
 
     # TODO: This is where the scene should be changed to the park
+
+    show rain phone at right
 
     Rain "What is it, Payton? I don’t have time to talk right now."
 
@@ -88,6 +92,7 @@ label call_rain_b:
             jump end_2
 
 label call_narration:
+    hide rain
     "You hang up on Rain with no small amount of irritation."
     "She always does this!"
     "You know confrontations are scary, but surely Rain knows you better than this?"
