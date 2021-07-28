@@ -37,18 +37,19 @@ label credits_menu:
 label credits_angela:
     "Angela Geiss created all of the music for this game."
     "She created four brilliant tracks. One of which is well hidden."
-    "She can be found on Twitter as @holyeggshells."
+    "Angela can be found on Twitter as @holyeggshells."
     return
 
 label credits_anouk:
-    "Anouk crafted this story and did the majority of the writing."
+    "Anouk van der Sluijs crafted this story and did the majority of the writing."
     "She also did a lot of editing and tying up loose ends."
+    "Anouk can be found on Twitter as @papercutdoc."
     return
 
 label credits_bec:
-    "Rebecca Lieberwirth, also known as Bec, did all of the character art."
+    "Rebecca Lieberwirth, did all of the character art."
     "She crafted the art for these characters from their initial design to their final illustrations."
-    "She can be found on Twitter as @straybec."
+    "Bec can be found on Twitter as @straybec."
     return
 
 label credits_eli:
@@ -59,6 +60,7 @@ label credits_eli:
 label credits_jeffrey:
     "Jeffrey Lindsey gathered this team together, and made sure everyone knew what they needed to do."
     "He also helped with some of the programming."
+    "Jeffrey can be found on Twitter as @jeffreylindsey."
     return
 
 label credits_sonic_meledy:
@@ -66,6 +68,7 @@ label credits_sonic_meledy:
     return
 
 label credits_taylor:
-    "Taylor created all of the background art."
+    "Taylor Dryden created all of the background art."
     "She also wrote the majority of the character dialogs."
+    "Taylor can be found on Twitter as @lakeffectkids."
     return
