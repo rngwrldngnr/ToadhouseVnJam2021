@@ -11,6 +11,7 @@ default loop_count = 0
 
 default inv.charge = False
 default inv.has_key = False
+default has_flatmate_left = False
 default knows_key_location = False
 default visited_park_earlier = False
 default late_for_cafe = False
@@ -35,6 +36,7 @@ label start:
     #jump start_debug
 
 label start_of_loop:
+    $ has_flatmate_left = False
     jump bedroom_start
 
 label start_debug:

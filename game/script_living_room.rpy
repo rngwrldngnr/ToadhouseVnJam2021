@@ -1,7 +1,7 @@
 label livingroom:
     scene bg livingroom
 
-    if before("8:23 AM"):
+    if not has_flatmate_left:
         jump livingroom_morning_talkn
     else:
         pass

@@ -1,3 +1,5 @@
+default key_look_count = 0
+
 label bedroom_start:
     scene bg bedroom
 
@@ -48,7 +50,8 @@ label lay_around_waiting_charge:
     "You get back in bed and spend another 45 minutes staring at your dusty ceiling fan."
     $ add_minutes(45)
     "You should really buy one of those dusters on a stick."
-    "As you lie there, the front door slams, and some of the dust comes fluttering down."  # TODO: Flag that roommate has left
+    "As you lie there, the front door slams, and some of the dust comes fluttering down."
+    $ has_flatmate_left = True
     "Your phone isn’t fully charged, but it will be useful in an emergency."
     "If you don’t leave now, you will definitely be late. Time to get up."
     $ inv.charge = True
@@ -120,6 +123,8 @@ label check_bedside_table:
     else:
         extend " but no key."
 
+    call bedroom_on_key_search
+
     return
 
 label check_dresser:
@@ -131,6 +136,8 @@ label check_dresser:
         extend " but you’ve {i}found{/i} your room key!"
     else:
         extend " and you didn’t even find the key."
+
+    call bedroom_on_key_search
 
     return
 
@@ -145,6 +152,8 @@ label check_posters:
     else:
         "Unfortunately it seems those kinds of shenanigans were not on past-you’s mind at the time. No key!"
 
+    call bedroom_on_key_search
+
     return
 
 label check_potted_plant:
@@ -157,5 +166,16 @@ label check_potted_plant:
         "Your room key is nestled in the dirt."
     else:
         "Your room key isn’t here."
+
+    call bedroom_on_key_search
+
+    return
+
+label bedroom_on_key_search:
+    $ key_look_count = key_look_count + 1
+
+    if key_look_count == 3 and not has_flatmate_left:
+        "Outside your room, the front door slams. Sounds like your flatmate has left for the day."
+        $ has_flatmate_left = True
 
     return
