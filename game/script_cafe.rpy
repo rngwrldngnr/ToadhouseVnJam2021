@@ -38,7 +38,9 @@ label cafe_no_rain:
     "You’re inclined to agree."
     "No use ruining this moment by worrying about Rain."
     "You came here to catch up with Farah."
+    show farah cat pics
     "You ask them about their new cat and spend the rest of your time together slowly sipping your massive drink and looking at pictures of a small cat trying to use a bigger, much older cat as a pillow."
+    hide farah
     "When you finally can’t justify taking up a table any longer without ordering another drink, it’s time to go."
     "You still haven’t figured out what to do about Rain, but maybe a walk in the park will help."
 
@@ -81,9 +83,11 @@ label farah_b2:
     Farah "We’re here to have coffee and take a break."
     Farah "Want to see a picture of my cats?"
 
+    show farah cat pics
     "Farah shows you the world’s cutest pictures of their cats."
     "You’d already seen most of them on social media and you’re about to point that out, but for once you catch yourself before you say it."
     "The pictures are adorable. You don’t mind seeing them again."
+    hide farah
     "After you’ve both finished your drinks, you say your goodbyes and head out the door."
     "You still haven’t had a chance to think about the argument with Rain, though."
     "You need some more time to clear your head."
@@ -102,7 +106,9 @@ label farah_b3:
 
     "Farah’s right."
     "You didn’t come here to get upset at Farah. You came here for a hot caffeinated beverage and some time with a friend."
+    show farah cat pics
     "The rest of your time together is still a little uncomfortable, but by the time you wave goodbye you’ve managed to turn the mood around and were even graced with an extra cute picture of Farah’s new cat."
+    hide farah
     "You definitely need some more time to think about your argument with Rain, though. Maybe a walk in the park will help."
 
     menu:
@@ -112,7 +118,9 @@ label farah_b3:
 label farah_narration:
     "Farah listens while you share your side of the story."
     "There isn’t much to share, because you literally don’t remember what you did, but it’s still good to talk."
+    show farah cat pics
     "After a bit, the conversation pivots to Farah’s cats and their new homemade scratching pole."
+    hide farah
     "You have a cosy time together and almost forget to drink your coffee before it gets cold."
     "Farah also gives you something to think about."
     "If Rain has discussed this with Farah, it must really bother her a lot."
@@ -163,8 +171,10 @@ label cafe_rain_late:
             pass
 
     "You came here to spend time with Farah, so that’s exactly what you do."
+    show farah cat pics
     "Farah tells you all about their new cat and how it’s getting along with their old cat."
     "A break is exactly what you needed."
+    hide farah
     "After you and Farah have exhausted every cat-related line of conversation for the week, they head home and you go for a walk in the park."
 
     menu:
