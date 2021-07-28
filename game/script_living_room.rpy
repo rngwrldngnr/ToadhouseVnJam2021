@@ -77,12 +77,12 @@ label livingroom_morning_talk_rude:
         
         "I don’t remember doing anything last night!":
             pass
-        "I’m sorry, I have no idea what you’re talking about.":
+        "I’m sorry, I have no idea what you’re talking about, Rain.":
             pass
 
-    Rain angry "Stop joking around."
-    Rain "I have to go, or I’ll be late for my shift."
-    Rain "We can talk about it later."
+    Rain "Forget it, Payton. It wouldn’t be the first time you forgot something."
+    Rain "I’m going to be late for work."
+    Rain "We’ll talk about it later."
 
     jump livingroom_morning_talk_unresolved
 
@@ -103,18 +103,30 @@ label livingroom_morning_talk_polite:
             "Maybe you misplaced it. You need to be more careful."
             pass
 
-    Rain annoyed "I always keep it in the same place. Besides, your notebook was right there!"
+    Rain "You know how meticulous I am about my stuff. I always keep it in the same place."
 
     menu:
         "Besides, your notebook was right there!"
 
-        "I didn’t drink last night, and I honestly don’t remember doing it. I’m sorry though, it wasn’t cool to take something of yours without asking.":
+        "You're right, I must have forgotten.":
             pass
 
-        "Maybe I was sleepwalking and took your laptop, I’m sorry. I would never take something of yours without asking.":
+        "You know my memory sucks. It’s not my fault!":
             pass
 
-    jump end_2
+    Payton "I know I’m forgetful, but you don’t have to yell at me."
+    Payton "I told you I kept forgetting to buy a new laptop battery."
+    Payton "You could have reminded me, but instead you’re just blaming me!"
+
+    Rain "I didn’t mind your forgetfulness when you forgot to do the dishes yesterday, or that time I had to go home on my lunch break because you locked yourself out of the house, but taking someone’s laptop without asking is not the same thing!"
+
+    Payton "Fine, I’m sorry!"
+    Payton "I’d promise not to do it again, but I’d probably forget that too!"
+
+    Rain "I don’t want to have this conversation anymore."
+    Rain "I’m leaving now. I’m already late for work because of you."
+
+    jump end_3
 
 label livingroom_morning_talk_unresolved:
     "Rain leaves."
@@ -141,7 +153,7 @@ label livingroom_ufo_news:
     BelieverAnchor "They show an unidentified flying object appearing and the next second it’s gone!"
 
     SkepticalAnchor "It could be any number of things!"
-    SkepticalAnchor "A light flare on the camera or a shadow from something moving nearby. The footage was probably doctored!"
+    SkepticalAnchor "A light flare on the camera or a shadow from something moving nearby."
     SkepticalAnchor "The footage was probably doctored!"
 
     BelieverAnchor "We’ve already ruled out all of those possibilities!"
