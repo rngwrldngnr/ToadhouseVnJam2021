@@ -27,7 +27,7 @@ label livingroom_morning_talkn:
     "Oh, you’ve left some coffee cups on the table. You should take care of those later."
     "The TV is on, but the volume is too low to make out what the newsreaders are saying."
     "As you’re patting your pockets to check you have your wallet, phone, and keys, Rain walks past with an empty plate."
-    show rain unhappy
+    show rain sad right
     "You can still smell the fried eggs she always has for breakfast and it’s making you peckish."
     "Rain usually has a permanent case of resting happy face, but right now she doesn’t look cheerful."
 
@@ -42,7 +42,7 @@ label livingroom_morning_talkn:
 
 label livingroom_morning_talk_skip:
     "You seek a moment of eye contact with Rain to give her a reassuring smile and nod."
-    show rain unhappy eyecontact
+    show rain frustrated right
     "Your flawless comforting technique is not very effective"
     "but you don’t have time to talk right now. You are meeting Farah at the café."
 
@@ -60,7 +60,7 @@ label livingroom_morning_talk_skip:
             jump cafe
 
 label livingroom_morning_talk_start:
-    Rain unhappy eyecontact "You mean you really don’t know what’s bothering me?"
+    Rain frustrated right "You mean you really don’t know what’s bothering me?"
 
     menu:
         "If I did I wouldn’t be asking.":
@@ -69,7 +69,7 @@ label livingroom_morning_talk_start:
             jump livingroom_morning_talk_polite
 
 label livingroom_morning_talk_rude:
-    Rain annoyed "You’re being awfully rude for what you did last night."
+    Rain angry right "You’re being awfully rude for what you did last night."
     Rain "That’s not cool, Payton."
 
     menu:
@@ -87,7 +87,7 @@ label livingroom_morning_talk_rude:
     jump livingroom_morning_talk_unresolved
 
 label livingroom_morning_talk_polite:
-    Rain unhappy eyecontact "Last night you borrowed my laptop without asking!"
+    Rain sad right "Last night you borrowed my laptop without asking!"
     Rain "I normally don’t mind, but I couldn’t find it this morning."
     Rain "I thought someone took it from my bag at the café yesterday until I saw it sticking out from under the pillows on the couch. Your notebook was on top."
     Rain "I was really worried!"
@@ -106,7 +106,7 @@ label livingroom_morning_talk_polite:
     Rain "You know how meticulous I am about my stuff. I always keep it in the same place."
     Rain "Besides, your notebook was right there!"
 
-    Payton "You know my memory sucks. It’s not my fault!":
+    Payton "You know my memory sucks. It’s not my fault!"
     Payton "I know I’m forgetful, but you don’t have to yell at me."
     Payton "I told you I kept forgetting to buy a new laptop battery."
     Payton "You could have reminded me, but instead you’re just blaming me!"

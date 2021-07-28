@@ -7,7 +7,7 @@ label cafe:
     "The cafe has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it."
     "It’s mostly quiet, a few other patrons are talking and you can hear the blender mixing some sort of icy drink."
     "Farah waves at you from their seat."
-    show farah neutral at center
+    show farah neutral right at center
     "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you would not hesitate to bet is decaffeinated."
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
     "You avoid the croissants—this place has not yet realised that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
