@@ -99,13 +99,13 @@ label explore_your_room:
             call check_bedside_table from _call_check_bedside_table
 
         "The dresser drawers.":
-            call check_dresser
+            call check_dresser from _call_check_dresser
 
         "The posters.":
             call check_posters from _call_check_posters
 
         "The small potted plant.":
-            call check_potted_plant
+            call check_potted_plant from _call_check_potted_plant
 
         "The outside of the bedroom." if inv.has_key:
             $ add_minutes(1)
@@ -123,7 +123,7 @@ label check_bedside_table:
     else:
         extend " but no key."
 
-    call bedroom_on_key_search
+    call bedroom_on_key_search from _call_bedroom_on_key_search
 
     return
 
@@ -137,7 +137,7 @@ label check_dresser:
     else:
         extend " and you didn’t even find the key."
 
-    call bedroom_on_key_search
+    call bedroom_on_key_search from _call_bedroom_on_key_search_1
 
     return
 
@@ -152,7 +152,7 @@ label check_posters:
     else:
         "Unfortunately it seems those kinds of shenanigans were not on past-you’s mind at the time. No key!"
 
-    call bedroom_on_key_search
+    call bedroom_on_key_search from _call_bedroom_on_key_search_2
 
     return
 
@@ -167,7 +167,7 @@ label check_potted_plant:
     else:
         "Your room key isn’t here."
 
-    call bedroom_on_key_search
+    call bedroom_on_key_search from _call_bedroom_on_key_search_3
 
     return
 

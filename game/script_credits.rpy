@@ -9,25 +9,25 @@ label credits_menu:
         "Who do you want to know about?"
 
         "Angela - Music":
-            call credits_angela
+            call credits_angela from _call_credits_angela
 
         "Anouk - Writing":
-            call credits_anouk
+            call credits_anouk from _call_credits_anouk
 
         "Bec - Character Art":
-            call credits_bec
+            call credits_bec from _call_credits_bec
 
         "Eli - Programming":
-            call credits_eli
+            call credits_eli from _call_credits_eli
 
         "Jeffrey - Producer, Programming":
-            call credits_jeffrey
+            call credits_jeffrey from _call_credits_jeffrey
 
         "Sonic_Meledy - Sound Effects":
-            call credits_sonic_meledy
+            call credits_sonic_meledy from _call_credits_sonic_meledy
 
         "Taylor - Writing, Background Art":
-            call credits_taylor
+            call credits_taylor from _call_credits_taylor
 
         "Take me back to the main menu please.":
             return
