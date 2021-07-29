@@ -160,7 +160,6 @@ label livingroom_ufo_news:
     "The forum had agreed that this recent evidence was overwhelming, but you had to admit that even the most cautious among you had been disappointed by false hope before."
     "Still, this seemed more than a slow news day to you."
     "You’re neck-deep in the latest thread and have just reported a rude comment about the red-headed newscaster to the moderators when you realise a lot of time has passed. Whoops."
-    $ add_minutes(60)
     "You were supposed to meet Farah for lunch. Time to go."
 
     $ late_for_cafe = True

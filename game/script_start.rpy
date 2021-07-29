@@ -3,9 +3,6 @@
 default inventory = dict()
 default knowledgeBase = dict()
 
-default schedule.rawTime = 497
-default schedule.clock_time = "08:17 AM"
-
 # This starts at 0, and gets incremented each time the game loops back to the beginning.
 default loop_count = 0
 

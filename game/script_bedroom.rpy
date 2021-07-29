@@ -12,8 +12,7 @@ label bedroom_start:
     "You were having a very realistic dream. Then your surroundings sink in."
     "All cool, just your room."
     "The sun is stabbing through a gap in the curtains and poking you in the face."
-    "Your alarm clock tells you it’s August 1st, [schedule.clock_time]."
-    show screen clock_screen()
+    "Your alarm clock tells you it’s August 1st, 8:17 AM."
     "When did you go to bed last night?"
     "You don’t remember, but you do remember agreeing to have coffee with a friend this morning."
 
@@ -34,7 +33,6 @@ label get_up:
     jump explore_your_room
 
 label grab_your_phone:
-    $ add_minutes(1)
     "You get up and grab your phone"
     "but not without knocking over one of the many tiny frog statues your family has gifted you since you mentioned to your mum that you thought frogs were neat once ten years ago."
     "Your phone is not plugged in. The battery is dead."
@@ -48,7 +46,6 @@ label grab_your_phone:
 
 label lay_around_waiting_charge:
     "You get back in bed and spend another 45 minutes staring at your dusty ceiling fan."
-    $ add_minutes(45)
     "You should really buy one of those dusters on a stick."
     "As you lie there, the front door slams, and some of the dust comes fluttering down."
     $ has_flatmate_left = True
@@ -61,7 +58,6 @@ label lay_around_waiting_charge:
 default loops.key_location = -1
 
 label explore_your_room:
-    $ add_minutes(1)
     "You take a good look around the room."
     "There are the cat in space and frog with the toadstool posters that you thought would add a little bit of character to your room."
     "The sheets are lavender with a purple duvet to match."
@@ -108,13 +104,11 @@ label explore_your_room:
             call check_potted_plant from _call_check_potted_plant
 
         "The outside of the bedroom." if inv.has_key:
-            $ add_minutes(1)
             jump livingroom
 
     jump check_bedroom
 
 label check_bedside_table:
-    $ add_minutes(2)
     "You find some hard candies and a stack of faded newspaper clippings about UFOs..."
     if is_key_here(1):
         $ inv.has_key = True
@@ -128,7 +122,6 @@ label check_bedside_table:
     return
 
 label check_dresser:
-    $ add_minutes(2)
     "You’re going to have to refold all of these clothes now..."
     if is_key_here(2):
         $ inv.has_key = True
@@ -142,7 +135,6 @@ label check_dresser:
     return
 
 label check_posters:
-    $ add_minutes(2)
     "Some lovely posters of cats and toads."
     "You check to see if the you from last night thought it was funny to tape the key behind a poster, like a hidden message in a mystery novel."
     if is_key_here(3):
@@ -157,7 +149,6 @@ label check_posters:
     return
 
 label check_potted_plant:
-    $ add_minutes(2)
     "You lift up the pot to see if you put the key underneath, but no luck."
     "Just in case, you check inside the pot too."
     if is_key_here(4):

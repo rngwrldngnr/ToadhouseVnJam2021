@@ -1,6 +1,5 @@
 label cafe:
     scene bg cafe
-    $ add_minutes(10)
 
     "Upon entering the cafe the first thing you notice is the smell of the coffee beans."
     "It’s such a relaxing smell, with an undertone of pastries and other sweets."
