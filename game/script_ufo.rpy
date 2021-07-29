@@ -91,7 +91,7 @@ label ufo_alex_a3:
     menu:
         "Your experiment is cruel and inhumane!":
             Payton "Your experiment is cruel and inhumane!"
-            jump end_4
+            jump ufo_end_4
 
         "I can’t learn and grow if you wipe my memory!":
             Payton "I can’t learn and grow if you wipe my memory!"
@@ -209,5 +209,15 @@ label ufo_alex_b2:
     "Maybe the door was in a different place? You don’t remember."
     # TODO: Fade to black?
     "You don’t remember."
+
+    jump restart_loop
+
+label ufo_end_4:
+    "You try to explain how hurtful this experiment truly is, but Alex is not convinced of your emotional argument."
+
+    # TODO: Alex annoyed?
+
+    "As you try to make your case, another alien comes up behind you and calmly tells you you have failed at conflict resolution."
+    "The experiment is safe, though! You will get another chance."
 
     jump restart_loop
