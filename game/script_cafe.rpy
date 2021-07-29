@@ -6,7 +6,12 @@ label cafe:
     "The café has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it."
     "It’s mostly quiet. A few other patrons are talking and you can hear the blender mixing some sort of icy drink."
     "Farah waves at you from their seat."
-    show farah neutral right at center
+
+    if late_for_cafe:
+        show farah neutral right at center
+    else:
+        show farah smile right at center
+
     "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you'd bet is decaffeinated."
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
     "You avoid the croissants—this place hasn’t realised yet that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
@@ -50,6 +55,8 @@ label cafe_no_rain:
 label cafe_about_rain:
     Payton "I think Rain and I had a fight last night?"
 
+    show farah neutral right at center
+
     Farah "You think? You don’t remember?"
     Farah "What’s wrong?"
 
@@ -63,9 +70,14 @@ label cafe_about_rain:
             jump farah_b2
 
 label farah_b1:
+    show farah neutral right at center
+
     Farah "I know your memory is spotty sometimes, but that’s a lot to forget."
     Farah "Rain actually texted me about it."
     Farah "She talks things through with me sometimes before confronting a problem."
+
+    show farah smile right at center
+
     Farah "Would you like to talk about it too?"
 
     menu:
@@ -79,10 +91,14 @@ label farah_b1:
 
 label farah_b2:
     Farah "Yeah, of course."
+
+    show farah smile right
+
     Farah "We’re here to have coffee and take a break."
     Farah "Want to see a picture of my cats?"
 
     show farah cat pics
+
     "Farah shows you the world’s cutest pictures of their cats."
     "You’d already seen most of them on social media and you’re about to point that out, but for once you catch yourself before you say it."
     "The pictures are adorable. You don’t mind seeing them again."
@@ -98,12 +114,20 @@ label farah_b2:
             jump walk_in_the_park
 
 label farah_b3:
+    show farah exasperated right
+
     Farah "Rain is one of my closest friends, Payton, of course we talk!"
     Farah "I know she’s mad at you, but you don’t have to take it out on me."
+
+    show farah neutral right
+
     Farah "Look, I know you’re upset, but do you think you can set it aside for an hour so we can spend some time together?"
     Farah "You can pick it up with Rain later."
 
     Payton "You’re right. I didn’t come here to get upset at you."
+
+    show farah smile right
+
     Payton "I came here for a hot beverage and some time with a friend."
 
     show farah cat pics
@@ -136,6 +160,8 @@ label farah_narration:
             jump call_rain
 
 label cafe_late:
+    show farah exasperated right
+
     Farah "Payton, I’ve practically finished my coffee already. You’re so late, what happened?"
 
     menu:
@@ -146,8 +172,12 @@ label cafe_late:
             jump cafe_rain_late
 
 label cafe_complain:
+    show farah neutral right
+
     Farah "Ah, that sucks."
     Farah "Next time the world hates you, though, could you shoot me a message so I know I can sleep in a little longer?"
+
+    show farah smile right
 
     "The conversation quickly devolves into jokes about setting up an app that automatically texts your friends to cancel when the stars aren’t in position for your hangout."
     "Your friends won’t always be in the mood to help you figure out your stuff, but Farah is always up for a decaf latte and a terrible pun."
@@ -158,11 +188,18 @@ label cafe_complain:
             jump walk_in_the_park
 
 label cafe_rain_late:
+    show farah neutral right
+
     Farah "Yeah, she told me. I hope you two work things out."
 
     menu:
         "Wait, she told you we had a fight?":
+            show farah exasperated right
+
             Farah "I’ve known Rain my whole life, of course she tells me when she’s upset."
+
+            show farah neautral right
+
             Farah "Listen, I love you, but we’ve already lost some valuable hangout time, so I don’t want to play mediator right now."
             Farah "Can we just enjoy our coffee?"
             pass
@@ -170,11 +207,17 @@ label cafe_rain_late:
         "I’ll talk to Rain later. I just need a break.":
             pass
 
+    show farah neutral right
+
     "You came here to spend time with Farah, so that’s exactly what you do."
+
     show farah cat pics
+
     "Farah tells you all about their new cat and how it’s getting along with their old cat."
     "A break is exactly what you needed."
+
     hide farah
+
     "After you and Farah have exhausted every cat-related line of conversation for the week, they head home and you go for a walk in the park."
 
     menu:

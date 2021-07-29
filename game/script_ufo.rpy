@@ -9,6 +9,8 @@ label ufo_start:
 
     "And is that a real alien?!"
 
+    show alex annoyed left
+
     Alien "Excuse me. You shouldn’t be here."
     Alien "How did you get here? What are you doing?"
 
@@ -31,6 +33,8 @@ label ufo_narration_a:
     "The helmet’s in the way and you have no idea if your human interpretations of facial expressions apply to this alien."
     "That thought makes a nervous giggle burst up inside of you. An {i}alien!{/i}"
 
+    show alex neutral left
+
     Alien "You can call me Alex."
 
     Alex "This is my ship."
@@ -47,6 +51,8 @@ label ufo_narration_a:
             Payton "Wait, you’re experimenting on us? That’s so cliché."
             pass
 
+    show alex annoyed left
+
     Alex "Do not insult that which you do not understand."
     Alex "We are doing important work."
 
@@ -60,6 +66,8 @@ label ufo_narration_a:
             jump ufo_alex_a2
 
 label ufo_narration_a2:
+    show alex smile left
+
     "The alien looks relieved, but again, you can’t be 100\% sure."
     "The only thing you’re certain of is that Alex definitely doesn’t want you to be here."
     "Those suspicions are immediately confirmed when you notice another alien sneak up behind you."
@@ -70,6 +78,8 @@ label ufo_narration_a2:
     jump restart_loop
 
 label ufo_alex_a2:
+    show alex neutral left
+
     Alex "We are here to see if your planet is ready to join our galactic federation of planets."
     Alex "You have been chosen as a test subject."
     Alex "We are observing your ability to peacefully resolve a conflict."
@@ -85,6 +95,8 @@ label ufo_alex_a2:
             jump ufo_narration_a3
 
 label ufo_alex_a3:
+    show alex neutral left
+
     Alex "That would be a hurtful statement if I were sensitive to human emotions."
     Alex "Why would you say such a thing?"
 
@@ -104,9 +116,13 @@ label ufo_payton_a4:
     Payton "Wiping my memory only proves that I can’t solve this one conflict right now."
     Payton "If you let me try again, knowing what I did wrong last time, I may get a different result!"
 
+    show alex considering left
+
     "Alex contemplates your words."
     "As the alien considers your argument, you look around to see if anyone is trying to sneak up behind you to wipe your mind."
     "Another alien catches your eye, but it doesn’t look like you’re about to get zapped with some kind of mind-wiping device."
+
+    show alex neutral left
 
     Alex "We did not consider this perspective. Your logic is sound."
     Alex "We will release you. Do not make us regret it."
@@ -163,8 +179,12 @@ label ufo_narration_a3:
     jump restart_loop
 
 label ufo_narration_b:
+    show alex neutral left
+
     "The alien seems calmed by your willingness to answer questions."
     "You can’t be certain, though. The facial expressions seem similar to yours, but this is an alien."
+
+    show alex smile left
 
     Alien "Of course. Curiosity is only natural."
     Alien "You can call me Alex."
