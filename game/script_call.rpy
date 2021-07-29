@@ -1,12 +1,12 @@
 label call_rain:
-    scene bg park
-
     if inv.charge:
         jump call_rain_phone_charged
     else:
         jump call_rain_no_phone
 
 label call_rain_no_phone:
+    scene bg park
+
     "You decide you don’t want to let this stew any longer."
     "A text message isn’t enough. This requires a phone call."
     "You dig your phone out of your pocket, psyching yourself up for the conversation, and look at the screen."
@@ -24,9 +24,10 @@ label call_rain_phone_charged:
     "You decide you don’t want to let this stew any longer."
     "You have your phone on you."
     "Phone calls are your least favourite way to communicate, but it’s the only way to talk to Rain right away without the risk of your tone of voice being misinterpreted."
-    "You take a short walk to the park, so you can find a place to sit down and call Rain."
 
-    # TODO: This is where the scene should be changed to the park
+    scene bg park
+
+    "You take a short walk to the park, so you can find a place to sit down and call Rain."
 
     show rain phone at right
 

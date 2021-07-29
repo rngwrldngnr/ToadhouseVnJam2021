@@ -73,8 +73,11 @@ label ufo_narration_a2:
     "Those suspicions are immediately confirmed when you notice another alien sneak up behind you."
     "A second later, you’re no longer worried at all."
     "Why were you here again?"
-    # TODO: Fade to black?
+
+    scene black with dissolve
+
     "You don’t remember."
+
     jump restart_loop
 
 label ufo_alex_a2:
@@ -213,8 +216,11 @@ label ufo_narration_b1:
 
 label ufo_narration_b1_2:
     "Wait, did you tell Alex your name? You don’t remember."
-    # TODO: Fade to black?
+
+    scene black with dissolve
+
     "You don’t remember."
+
     jump restart_loop
 
 label ufo_alex_b2:
@@ -227,17 +233,21 @@ label ufo_alex_b2:
     "You turn around, looking for the exit, but the door you came in through is no longer there."
     "A soft humming noise is in the air now."
     "Maybe the door was in a different place? You don’t remember."
-    # TODO: Fade to black?
+
+    scene black with dissolve
+
     "You don’t remember."
 
     jump restart_loop
 
 label ufo_end_4:
+    show alex annoyed left
+
     "You try to explain how hurtful this experiment truly is, but Alex is not convinced of your emotional argument."
-
-    # TODO: Alex annoyed?
-
     "As you try to make your case, another alien comes up behind you and calmly tells you you have failed at conflict resolution."
+
+    scene black with dissolve
+
     "The experiment is safe, though! You will get another chance."
 
     jump restart_loop
