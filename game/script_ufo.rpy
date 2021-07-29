@@ -118,9 +118,48 @@ label ufo_narration_a3:
     "You take a hard look at the smooth steel of the ship around you, willing yourself to remember."
     "A piercing headache is building behind your temples."
     "You look Alex in the eye and for a moment you know exactly how many times you’ve been here before."
-    "A second later, you don’t remember."
-    # TODO: Fade to black?
+
+    Alex "I see you are starting to remember."
+    Alex "We apologise for the inconvenience. Our intention is not to harm you."
+    Alex "We have a test to see if there is any permanent damage to your memory that requires fixing."
+    Alex "Please come with me if you would like to be reassured."
+
+    Payton "It doesn’t sound like I have a choice."
+
+    Alex "If you would rather be sent back immediately, that can be arranged."
+
+    menu:
+        "I just want to go home.":
+            Payton "I just want to go home."
+            Alex "As you wish."
+            jump restart_loop
+
+        "Fine, I’ll take the test":
+            Payton "Fine, I’ll take the test"
+            pass
+
+    Alex "Excellent. Follow me."
+
+    "Alex touches the wall and opens a door. You are led through a long hallway."
+    "How many rooms are hidden behind these walls? The UFO looked much smaller from the outside."
+    "The wall has no defining features to your eyes, but there’s a hum in the air that is changing pitch."
+    "Right as the frequency becomes too low for your ears, Alex stops and opens another door."
+    "You’re ushered inside and shown what looks like a game."
+
+    hide alex
+
+    call memory_game(["Alien", "Dinosaur", "Books", "Key", "Phone", "Bagel"]) from _call_memory_game
+
+    "You’ve finished the test!"
+    "Hopefully the results only indicate your normal level of forgetfulness."
+    "As you bring your attention back to the room, the silence is suddenly oppressive."
+    "Where is Alex? Where are you? What were you doing here?"
+    "You try to think, but you don’t remember."
+
+    scene black
+
     "You don’t remember."
+
     jump restart_loop
 
 label ufo_narration_b:

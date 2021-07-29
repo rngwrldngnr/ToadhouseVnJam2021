@@ -1,6 +1,6 @@
-label end:
-    call memory_game(["Alien", "Dinosaur", "Books", "Key", "Phone", "Bagel"]) from _call_memory_game
-    return
+#label end:
+#    call memory_game(["Alien", "Dinosaur", "Books", "Key", "Phone", "Bagel"]) from _call_memory_game
+#    return
 
 default minigame.saved_shuffles = dict()
 default minigame.aspect_ratio = config.screen_width / (config.screen_height - gui.textbox_height)
@@ -115,7 +115,7 @@ label memo_game_win:
     hide screen memo_scr
     $ renpy.pause (0.1, hard = True)
     $ renpy.pause (0.1, hard = True)
-    "You win!"
+    #"You win!"
     return
 
 init python:

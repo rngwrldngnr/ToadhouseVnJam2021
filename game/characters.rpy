@@ -10,5 +10,5 @@ define Alex = Character(_("Alex"), color="FFFFFF", image="alien")
 
 define ProgrammerPooch = Character("Programmer Pooch", image="dog_coding.jpg")
 
-define SkepticalAnchor = Character(_("Skeptical Anchor"))
-define BelieverAnchor = Character(_("Believer Anchor"))
+define SkepticalAnchor = Character(_("News Anchor - Dana"))
+define BelieverAnchor = Character(_("News Anchor - Fox"))

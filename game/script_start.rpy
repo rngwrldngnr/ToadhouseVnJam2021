@@ -48,6 +48,9 @@ label start_debug:
             $ flag.saw_ufo_news = True
             jump walk_in_the_park
 
+        "ufo_start":
+            jump ufo_start
+
         "Rain talk":
             jump livingroom
 
