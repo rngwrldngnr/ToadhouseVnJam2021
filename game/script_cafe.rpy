@@ -1,15 +1,15 @@
 label cafe:
     scene bg cafe
 
-    "Upon entering the cafe the first thing you notice is the smell of the coffee beans."
+    "Upon entering the café, the first thing you notice is the smell of the coffee beans."
     "It’s such a relaxing smell, with an undertone of pastries and other sweets."
-    "The cafe has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it."
-    "It’s mostly quiet, a few other patrons are talking and you can hear the blender mixing some sort of icy drink."
+    "The café has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it."
+    "It’s mostly quiet. A few other patrons are talking and you can hear the blender mixing some sort of icy drink."
     "Farah waves at you from their seat."
     show farah neutral right at center
-    "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you would not hesitate to bet is decaffeinated."
+    "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you'd bet is decaffeinated."
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
-    "You avoid the croissants—this place has not yet realised that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
+    "You avoid the croissants—this place hasn’t realised yet that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
 
     if late_for_cafe:
         jump cafe_late
@@ -58,8 +58,8 @@ label cafe_about_rain:
             Payton "Rain is upset about something I don’t remember doing."
             jump farah_b1
 
-        "I’d rather talk about something else right now.":
-            Payton "I’m okay, I’d rather talk about something else right now."
+        "I’m okay. I’d rather talk about something else right now.":
+            Payton "I’m okay. I’d rather talk about something else right now."
             jump farah_b2
 
 label farah_b1:
@@ -103,10 +103,11 @@ label farah_b3:
     Farah "Look, I know you’re upset, but do you think you can set it aside for an hour so we can spend some time together?"
     Farah "You can pick it up with Rain later."
 
-    "Farah’s right."
-    "You didn’t come here to get upset at Farah. You came here for a hot caffeinated beverage and some time with a friend."
+    Payton "You’re right. I didn’t come here to get upset at you."
+    Payton "I came here for a hot beverage and some time with a friend."
+
     show farah cat pics
-    "The rest of your time together is still a little uncomfortable, but by the time you wave goodbye you’ve managed to turn the mood around and were even graced with an extra cute picture of Farah’s new cat."
+    "You feel a little uncomfortable for a moment, but by the time you wave goodbye, you’ve managed to turn the mood around and were even graced with an extra cute picture of Farah’s new cat."
     hide farah
     "You definitely need some more time to think about your argument with Rain, though. Maybe a walk in the park will help."
 
@@ -116,7 +117,7 @@ label farah_b3:
 
 label farah_narration:
     "Farah listens while you share your side of the story."
-    "There isn’t much to share, because you literally don’t remember what you did, but it’s still good to talk."
+    "There isn’t much to share, because you don’t remember what you could have done to upset Rain, but it’s still good to talk."
     show farah cat pics
     "After a bit, the conversation pivots to Farah’s cats and their new homemade scratching pole."
     hide farah

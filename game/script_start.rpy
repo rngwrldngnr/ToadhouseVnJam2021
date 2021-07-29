@@ -41,14 +41,14 @@ label start_debug:
         "Normal start":
             jump start_of_loop
 
-        "Cafe on time":
+        "Café on time":
             jump cafe
 
         "UFO in park":
             $ flag.saw_ufo_news = True
             jump walk_in_the_park
 
-        "ufo_start":
+        "UFO start":
             jump ufo_start
 
         "Rain talk":

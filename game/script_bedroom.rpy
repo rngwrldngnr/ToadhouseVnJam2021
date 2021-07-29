@@ -9,8 +9,8 @@ label bedroom_start:
     play sound "./audio/Toadhouse__ReplayRespawn__00.mp3"
 
     "A bright light wakes you up. For half a second, you’re disoriented."
-    "You were having a very realistic dream. Then your surroundings sink in."
-    "All cool, just your room."
+    "You were having a very realistic dream, so it takes a moment for your surroundings to sink in."
+    "It’s just your bedroom."
     "The sun is stabbing through a gap in the curtains and poking you in the face."
     "Your alarm clock tells you it’s August 1st, 8:17 AM."
     "When did you go to bed last night?"
@@ -66,7 +66,7 @@ label explore_your_room:
     "Right next to it is a small frog statue."
     "On the nightstand is a newspaper with the headline “possible UFO?”"
     "A nice addition to your collection."
-    "Candy and wrappers are scattered over the top."
+    "Candy and wrappers are scattered across the nightstand."
     "You’ll get to throwing those out later. But where is the key?"
 
 #    if loops.key_location == 0:
@@ -86,7 +86,7 @@ label explore_your_room:
     $ key_location_set = set()
     menu check_bedroom:
         set key_location_set
-        "Time to take a closer look at..."
+        "Time to take a closer look at…"
 
 #        "Your memory of last night (doesn't work yet)": #if loops.key_location == 5:
 #            call memory_game(["Key", "Alien", "Phone"])
@@ -109,7 +109,7 @@ label explore_your_room:
     jump check_bedroom
 
 label check_bedside_table:
-    "You find some hard candies and a stack of faded newspaper clippings about UFOs..."
+    "You find some hard candies and a stack of faded newspaper clippings about UFOs…"
     if is_key_here(1):
         $ inv.has_key = True
         $ knows_key_location = True
@@ -122,7 +122,7 @@ label check_bedside_table:
     return
 
 label check_dresser:
-    "You’re going to have to refold all of these clothes now..."
+    "You’re going to have to refold all of these clothes now…"
     if is_key_here(2):
         $ inv.has_key = True
         $ knows_key_location = True
@@ -135,7 +135,7 @@ label check_dresser:
     return
 
 label check_posters:
-    "Some lovely posters of cats and toads."
+    "Some lovely posters of a cat and a toad."
     "You check to see if the you from last night thought it was funny to tape the key behind a poster, like a hidden message in a mystery novel."
     if is_key_here(3):
         $ inv.has_key = True

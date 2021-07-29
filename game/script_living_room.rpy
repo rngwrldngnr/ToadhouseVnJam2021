@@ -21,8 +21,8 @@ label livingroom:
 
 label livingroom_morning_talkn:
     "You rush into the living room to grab your stuff."
-    "This place brings many memories since the years that you’ve lived here."
-    "It’s one of the cosiest areas in your home, and you’ve often fallen asleep on that couch while watching movies."
+    "This place holds a lot of memories of the years that you’ve lived here."
+    "It’s one of the cosiest areas in your home and you’ve often fallen asleep on that couch while watching movies."
     "You’re surprised the Monstera plant is still alive, because you don’t have much of a green thumb, but it seems to be doing well."
     "Oh, you’ve left some coffee cups on the table. You should take care of those later."
     "The TV is on, but the volume is too low to make out what the newsreaders are saying."
@@ -73,7 +73,7 @@ label livingroom_morning_talk_rude:
     Rain "That’s not cool, Payton."
 
     menu:
-        Rain "That's not cool Payton."
+        Rain "That's not cool, Payton."
         
         "I don’t remember doing anything last night!":
             pass
@@ -122,6 +122,7 @@ label livingroom_morning_talk_polite:
     jump end_3
 
 label livingroom_morning_talk_unresolved:
+    hide rain
     "Rain leaves."
     "This is definitely a conversation to pick up again later."
     "Then the words BREAKING NEWS and its accompanying sting on the TV do their job of catching your attention."
@@ -160,7 +161,7 @@ label livingroom_ufo_news:
     "The forum had agreed that this recent evidence was overwhelming, but you had to admit that even the most cautious among you had been disappointed by false hope before."
     "Still, this seemed more than a slow news day to you."
     "You’re neck-deep in the latest thread and have just reported a rude comment about the red-headed newscaster to the moderators when you realise a lot of time has passed. Whoops."
-    "You were supposed to meet Farah for lunch. Time to go."
+    "You were supposed to meet Farah for coffee. Time to go."
 
     $ late_for_cafe = True
     jump cafe
