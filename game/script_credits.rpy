@@ -1,8 +1,6 @@
 label credits_start:
     scene black
 
-    # TODO: Music
-
     "The screen fades to black, the music starts to swell."
     "The credits appear, but not quite in the traditional way."
 

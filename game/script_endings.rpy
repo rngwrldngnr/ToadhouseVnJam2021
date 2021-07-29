@@ -26,6 +26,9 @@ label end_1:
     "You go to bed satisfied and exhilarated."
     "Aliens?!"
     "Right now, though, you’re just happy you didn’t have to go to bed angry."
+
+    play music "./audio/Toadhouse__OpenTheme_02.mp3"
+
     "You’ll deal with the world-shattering implications of this discovery tomorrow."
 
     scene black with fade
@@ -51,6 +54,9 @@ label end_2:
     "You can only imagine how this could have escalated. Today would have ended very differently."
     "Still, it takes you a while to fall asleep."
     "There’s a strange humming noise outside, but you can’t see where it’s coming from."
+
+    play music "./audio/Toadhouse__OpenTheme_02.mp3"
+
     "You’re too tired to deal with it now, though, so you’ll just have to see if it’s still a problem tomorrow."
 
     jump exit_time_loop
