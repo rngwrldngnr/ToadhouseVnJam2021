@@ -29,23 +29,11 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-# define credits.programming = _("Programming - ") + renpy.random.shuffle(["Cyn", "Eli"]).join(", ")
-# define credits.writing = _("Writing - Anouk")
-# define credits.music = _("Music - Angela")
-# define credits.sound = _("Sound - Sonic Medley")
-# define credits.backgrounds = _("Background Art - Taylor")
-# define credits.characters = _("Character Art - Bec")
-# define credits.project_management = _("Project Management - Jeffrey")
+define gui.about = _p("""
+This game was made entirely within the month of July 2021 as part of the Toadhouse Visual Novel Game Jam 2021.
 
-define gui.about = "\n".join(renpy.random.sample([
-_("Programming - ") + ", ".join(renpy.random.sample(["Cyn", "Eli"], 2)),
-_("Writing - Anouk"),
-_("Music - Angela"),
-_("Sound - Sonic Medley"),
-_("Background Art - Taylor"),
-_("Character Art - Bec"),
-_("Project Management - Jeffrey")
-], 7))
+Angela Geiss - Music /// Anouk van der Sluijs - Story, Editor /// Rebecca Lieberwirth - Character Art /// Daniel Cruz - Sound Designer /// Eli Berg-Maas - Programmer /// Jeffrey Lindsey - Project Lead, Programmer /// Taylor Dryden - Background Art, Location Descriptions, Dialogues ///
+""")
 
 
 ## A short name for the game used for executables and directories in the built
