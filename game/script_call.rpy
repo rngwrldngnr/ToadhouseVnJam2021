@@ -1,4 +1,7 @@
 label call_rain:
+    if loop_count == 0:
+        jump park_first_loop
+
     if inv.charge:
         jump call_rain_phone_charged
     else:
