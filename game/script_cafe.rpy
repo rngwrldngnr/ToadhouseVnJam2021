@@ -198,7 +198,7 @@ label cafe_rain_late:
 
             Farah "I’ve known Rain my whole life, of course she tells me when she’s upset."
 
-            show farah neautral right
+            show farah neutral right
 
             Farah "Listen, I love you, but we’ve already lost some valuable hangout time, so I don’t want to play mediator right now."
             Farah "Can we just enjoy our coffee?"
