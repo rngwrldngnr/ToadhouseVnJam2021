@@ -53,9 +53,9 @@ label credits_bec:
     return
 
 label credits_eli:
-    "Eli did the majority of the programming."
-    # TODO: Update this, because the minigame is in the game now.
-    "He even implemented a minigame, which ultimately didn't make it into the final release, but is still worth mentioning."
+    "Eli Berg-Maas did a lot of the programming."
+    "He set up the source control repository, got everything started with Ren'Py, and implemented a minigame which is hidden in one of the branches."
+    "Eli can be found on Twitter as @rngwrldngnr."
     return
 
 label credits_jeffrey:
