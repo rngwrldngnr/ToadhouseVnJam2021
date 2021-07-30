@@ -73,7 +73,7 @@ label livingroom_morning_talk_rude:
     Rain "That’s not cool, Payton."
 
     menu:
-        Rain "That's not cool, Payton."
+        Rain "That’s not cool, Payton."
         
         "I don’t remember doing anything last night!":
             pass
@@ -130,10 +130,10 @@ label livingroom_morning_talk_unresolved:
     "There’s a blurry picture on the screen that’s very similar to the one in the newspaper you picked up yesterday."
 
     menu:
-        "You're late. Leave to meet Farah.":
+        "You’re late. Leave to meet Farah.":
             jump cafe
 
-        "Turn up the volume to catch what they're saying":
+        "Turn up the volume to catch what they’re saying":
             jump livingroom_ufo_news
 
 label livingroom_ufo_news:

@@ -19,7 +19,7 @@ label bedroom_start:
 
 label get_up:
     "You drag yourself out of bed, throw on some clothes, and take three entire steps to the door."
-    "It's locked."
+    "It’s locked."
     "They key is not in the lock."
     "Weird, but not a cause for immediate panic. Probably."
     "Each bedroom got its own lock when this building was turned into a flatshare and you lock the door sometimes when you don’t want to be disturbed."
@@ -67,7 +67,7 @@ label explore_your_room:
 #    if loops.key_location == 0:
 #        show dog_coding at top
 #        menu dev_choose_how_to_find_key:
-#            ProgrammerPooch "You can test the different ways we've talke about finding the key."
+#            ProgrammerPooch "You can test the different ways we’ve talke about finding the key."
 #
 #            "Randomly placed key (same position in loops)":
 #                $ loops.key_location = renpy.random.randint(1,4)
@@ -107,7 +107,7 @@ label check_bedside_table:
     "You find some hard candies and a stack of faded newspaper clippings about UFOs…"
     if is_key_here(1):
         call bedroom_on_key_found from _call_bedroom_on_key_found
-        extend " and {i}there's{/i} your room key!"
+        extend " and {i}there’s{/i} your room key!"
     else:
         extend " but no key."
 

@@ -66,7 +66,7 @@ label call_rain_a1:
             Payton "Sounds good. I’ll make lasagna."
             jump end_2
 
-        "That's not good enough.":
+        "That’s not good enough.":
             Payton "That’s not good enough. You’ll still be distracted."
             jump call_narration
 

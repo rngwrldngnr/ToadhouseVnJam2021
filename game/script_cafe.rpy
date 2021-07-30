@@ -12,7 +12,7 @@ label cafe:
     else:
         show farah smile right at center
 
-    "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you'd bet is decaffeinated."
+    "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you’d bet is decaffeinated."
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
     "You avoid the croissants—this place hasn’t realised yet that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
 
