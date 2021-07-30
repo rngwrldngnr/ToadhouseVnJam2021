@@ -106,8 +106,7 @@ label explore_your_room:
 label check_bedside_table:
     "You find some hard candies and a stack of faded newspaper clippings about UFOs…"
     if is_key_here(1):
-        $ inv.has_key = True
-        $ knows_key_location = True
+        call bedroom_on_key_found from _call_bedroom_on_key_found
         extend " and {i}there's{/i} your room key!"
     else:
         extend " but no key."
@@ -119,8 +118,7 @@ label check_bedside_table:
 label check_dresser:
     "You’re going to have to refold all of these clothes now…"
     if is_key_here(2):
-        $ inv.has_key = True
-        $ knows_key_location = True
+        call bedroom_on_key_found from _call_bedroom_on_key_found_1
         extend " but you’ve {i}found{/i} your room key!"
     else:
         extend " and you didn’t even find the key."
@@ -133,8 +131,7 @@ label check_posters:
     "Some lovely posters of a cat and a toad."
     "You check to see if the you from last night thought it was funny to tape the key behind a poster, like a hidden message in a mystery novel."
     if is_key_here(3):
-        $ inv.has_key = True
-        $ knows_key_location = True
+        call bedroom_on_key_found from _call_bedroom_on_key_found_2
         "It seems like you were tired enough to find that sort of shenanigans fun but awake enough to {i}actually do it.{/i} You found the room key!"
     else:
         "Unfortunately it seems those kinds of shenanigans were not on past-you’s mind at the time. No key!"
@@ -147,8 +144,7 @@ label check_potted_plant:
     "You lift up the pot to see if you put the key underneath, but no luck."
     "Just in case, you check inside the pot too."
     if is_key_here(4):
-        $ inv.has_key = True
-        $ knows_key_location = True
+        call bedroom_on_key_found from _call_bedroom_on_key_found_3
         "Your room key is nestled in the dirt."
     else:
         "Your room key isn’t here."
@@ -164,4 +160,10 @@ label bedroom_on_key_search:
         "Outside your room, the front door slams. Sounds like your flatmate has left for the day."
         $ has_flatmate_left = True
 
+    return
+
+label bedroom_on_key_found:
+    play sound "./audio/OpenDoorSuccess01.wav"
+    $ inv.has_key = True
+    $ knows_key_location = True
     return
