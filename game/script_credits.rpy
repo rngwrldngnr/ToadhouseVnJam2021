@@ -36,7 +36,7 @@ label credits_menu:
 
 label credits_angela:
     "Angela Geiss created all of the music for this game."
-    "She created three brilliant tracks, one of which is well-hidden."
+    "She created four brilliant tracks, one of which is well-hidden."
     "Angela can be found on Twitter as @holyeggshells."
     return
 
