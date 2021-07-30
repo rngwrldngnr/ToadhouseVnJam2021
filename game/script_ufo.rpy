@@ -167,11 +167,17 @@ label ufo_narration_a3:
 
     hide alex
 
+    # Hide the dialogue box.
+    window hide
+
     play music "./audio/Toadhouse__AnAlien_00.mp3"
 
     call memory_game(["Alien", "Dinosaur", "Books", "Key", "Phone", "Bagel"]) from _call_memory_game
 
     stop music fadeout 1.0
+
+    # Show the dialogue box.
+    window show
 
     "You’ve finished the test!"
     "Hopefully the results only indicate your normal level of forgetfulness."
