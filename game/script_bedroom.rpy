@@ -64,27 +64,10 @@ label explore_your_room:
     "Candy and wrappers are scattered across the nightstand."
     "You’ll get to throwing those out later. But where is the key?"
 
-#    if loops.key_location == 0:
-#        show dog_coding at top
-#        menu dev_choose_how_to_find_key:
-#            ProgrammerPooch "You can test the different ways we’ve talke about finding the key."
-#
-#            "Randomly placed key (same position in loops)":
-#                $ loops.key_location = renpy.random.randint(1,4)
-#            "Key in whatever place is checked last (same position in loops)":
-#                $ loops.key_location = -1
-#            "Put the key in the bedside table (for testing routes)":
-#                $ loops.key_location = 1
-#            # "Key must be found with minigame (leave through window until you win)":
-#        hide dog_coding
-
     $ key_location_set = set()
     menu check_bedroom:
         set key_location_set
         "Time to take a closer look at…"
-
-#        "Your memory of last night (doesn't work yet)": #if loops.key_location == 5:
-#            call memory_game(["Key", "Alien", "Phone"])
 
         "The bedside table.":
             call check_bedside_table from _call_check_bedside_table
