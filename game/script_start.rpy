@@ -34,6 +34,12 @@ label start:
 
 label start_of_loop:
     $ has_flatmate_left = False
+
+    $ restart_loop()
+
+    # Note: this music track is played as a sound so that it doesn't loop.
+    play sound "./audio/Toadhouse__ReplayRespawn__00.mp3"
+
     jump bedroom_start
 
 label start_debug:

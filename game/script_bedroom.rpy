@@ -3,11 +3,6 @@ default key_look_count = 0
 label bedroom_start:
     scene bg bedroom
 
-    $ restart_loop()
-
-    # Note: this music track is played as a sound so that it doesn't loop.
-    play sound "./audio/Toadhouse__ReplayRespawn__00.mp3"
-
     "A bright light wakes you up. For half a second, you’re disoriented."
     "You were having a very realistic dream, so it takes a moment for your surroundings to sink in."
     "It’s just your bedroom."

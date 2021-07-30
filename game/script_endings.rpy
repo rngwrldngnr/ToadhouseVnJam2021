@@ -85,6 +85,5 @@ label exit_time_loop:
     jump credits_start
 
 label restart_loop:
-    # TODO: play loop restart music?
     $ loop_count = loop_count + 1
     jump start_of_loop
