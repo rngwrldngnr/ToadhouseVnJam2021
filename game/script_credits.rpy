@@ -17,14 +17,14 @@ label credits_menu:
         "Bec - Character Art":
             call credits_bec from _call_credits_bec
 
+        "Daniel - Sound Designer":
+            call credits_daniel from _call_credits_daniel
+
         "Eli - Programming":
             call credits_eli from _call_credits_eli
 
         "Jeffrey - Producer, Programming":
             call credits_jeffrey from _call_credits_jeffrey
-
-        "Daniel - Sound Designer":
-            call credits_daniel from _call_credits_daniel
 
         "Taylor - Writing, Background Art":
             call credits_taylor from _call_credits_taylor
@@ -61,6 +61,13 @@ label credits_bec:
     "Bec can be found on Twitter as @straybec."
     return
 
+label credits_daniel:
+    show expression "./images/credits/daniel1.png" at center with easeinleft
+    "Daniel Cruz provided sound effects."
+    scene black with easeoutbottom
+    "Daniel can be found on Twitter as @Mr_DanielC, and online at www.sonicmedley.com."
+    return
+
 label credits_eli:
     show expression "./images/credits/eli1.png" at left with easeinleft
     "Eli Berg-Maas did a lot of the programming."
@@ -77,13 +84,6 @@ label credits_jeffrey:
     "He also helped with some of the programming."
     scene black with easeoutbottom
     "Jeffrey can be found on Twitter as @jeffreylindsey."
-    return
-
-label credits_daniel:
-    show expression "./images/credits/daniel1.png" at center with easeinleft
-    "Daniel Cruz provided sound effects."
-    scene black with easeoutbottom
-    "Daniel can be found on Twitter as @Mr_DanielC, and online at www.sonicmedley.com."
     return
 
 label credits_taylor:
