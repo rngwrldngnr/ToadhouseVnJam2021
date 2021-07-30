@@ -1,7 +1,7 @@
 label ufo_start:
     scene bg ufo interior
 
-    "You’re weary as you peer into the UFO."
+    "You’re wary as you peer into the UFO."
     "You’re not sure what to expect, but you’ve seen enough horror movies to get a few ideas."
     "From the looks of it, the walls are lined with screens, buttons, and keyboards and something that almost comically looks like a video game joystick."
 
