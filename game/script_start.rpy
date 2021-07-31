@@ -47,8 +47,10 @@ label start_debug:
         "Normal start":
             jump start_of_loop
 
-        "Café on time":
-            jump cafe
+        "Call Rain":
+            $ loop_count = 1
+            $ inv.charge = True
+            jump call_rain
 
         "UFO in park":
             $ flag.saw_ufo_news = True
