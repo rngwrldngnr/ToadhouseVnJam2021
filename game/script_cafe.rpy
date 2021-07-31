@@ -1,17 +1,17 @@
 label cafe:
-    scene bg cafe
+    scene bg cafe with dissolve
 
     "Upon entering the café, the first thing you notice is the smell of the coffee beans."
     "It’s such a relaxing smell, with an undertone of pastries and other sweets."
     "The café has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it."
     "It’s mostly quiet. A few other patrons are talking and you can hear the blender mixing some sort of icy drink."
-    "Farah waves at you from their seat."
 
     if late_for_cafe:
-        show farah neutral right at center
+        show farah neutral right with easeinright
     else:
-        show farah smile right at center
+        show farah smile right with easeinright
 
+    "Farah waves at you from their seat."
     "They’ve picked out a nice table by the window and are already cradling a huge mug of a hot drink you’d bet is decaffeinated."
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
     "You avoid the croissants—this place hasn’t realised yet that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
@@ -42,9 +42,14 @@ label cafe_no_rain:
     "You’re inclined to agree."
     "No use ruining this moment by worrying about Rain."
     "You came here to catch up with Farah."
-    show farah cat pics
-    "You ask them about their new cat and spend the rest of your time together slowly sipping your massive drink and looking at pictures of a small cat trying to use a bigger, much older cat as a pillow."
+
     hide farah
+    show farah cat pics with easeinright
+
+    "You ask them about their new cat and spend the rest of your time together slowly sipping your massive drink and looking at pictures of a small cat trying to use a bigger, much older cat as a pillow."
+
+    hide farah with dissolve
+
     "When you finally can’t justify taking up a table any longer without ordering another drink, it’s time to go."
     "You still haven’t figured out what to do about Rain, but maybe a walk in the park will help."
 
@@ -55,7 +60,7 @@ label cafe_no_rain:
 label cafe_about_rain:
     Payton "I think Rain and I had a fight last night?"
 
-    show farah neutral right at center
+    show farah neutral right
 
     Farah "You think? You don’t remember?"
     Farah "What’s wrong?"
@@ -70,13 +75,13 @@ label cafe_about_rain:
             jump farah_b2
 
 label farah_b1:
-    show farah neutral right at center
+    show farah neutral right
 
     Farah "I know your memory is spotty sometimes, but that’s a lot to forget."
     Farah "Rain actually texted me about it."
     Farah "She talks things through with me sometimes before confronting a problem."
 
-    show farah smile right at center
+    show farah smile right
 
     Farah "Would you like to talk about it too?"
 
@@ -97,12 +102,15 @@ label farah_b2:
     Farah "We’re here to have coffee and take a break."
     Farah "Want to see a picture of my cats?"
 
-    show farah cat pics
+    hide farah
+    show farah cat pics with easeinright
 
     "Farah shows you the world’s cutest pictures of their cats."
     "You’d already seen most of them on social media and you’re about to point that out, but for once you catch yourself before you say it."
     "The pictures are adorable. You don’t mind seeing them again."
-    hide farah
+
+    hide farah with dissolve
+
     "After you’ve both finished your drinks, you say your goodbyes and head out the door."
     "You still haven’t had a chance to think about the argument with Rain, though."
     "You need some more time to clear your head."
@@ -130,9 +138,13 @@ label farah_b3:
 
     Payton "I came here for a hot beverage and some time with a friend."
 
-    show farah cat pics
-    "You feel a little uncomfortable for a moment, but by the time you wave goodbye, you’ve managed to turn the mood around and were even graced with an extra cute picture of Farah’s new cat."
     hide farah
+    show farah cat pics with easeinright
+
+    "You feel a little uncomfortable for a moment, but by the time you wave goodbye, you’ve managed to turn the mood around and were even graced with an extra cute picture of Farah’s new cat."
+
+    hide farah with dissolve
+
     "You definitely need some more time to think about your argument with Rain, though. Maybe a walk in the park will help."
 
     menu:
@@ -142,9 +154,14 @@ label farah_b3:
 label farah_narration:
     "Farah listens while you share your side of the story."
     "There isn’t much to share, because you don’t remember what you could have done to upset Rain, but it’s still good to talk."
-    show farah cat pics
-    "After a bit, the conversation pivots to Farah’s cats and their new homemade scratching pole."
+
     hide farah
+    show farah cat pics with easeinright
+
+    "After a bit, the conversation pivots to Farah’s cats and their new homemade scratching pole."
+
+    hide farah with dissolve
+
     "You have a cosy time together and almost forget to drink your coffee before it gets cold."
     "Farah also gives you something to think about."
     "If Rain has discussed this with Farah, it must really bother her a lot."
@@ -211,12 +228,13 @@ label cafe_rain_late:
 
     "You came here to spend time with Farah, so that’s exactly what you do."
 
-    show farah cat pics
+    hide farah
+    show farah cat pics with easeinright
 
     "Farah tells you all about their new cat and how it’s getting along with their old cat."
     "A break is exactly what you needed."
 
-    hide farah
+    hide farah with dissolve
 
     "After you and Farah have exhausted every cat-related line of conversation for the week, they head home and you go for a walk in the park."
 
