@@ -146,7 +146,7 @@ label bedroom_on_key_search:
     return
 
 label bedroom_on_key_found:
-    play sound "./audio/OpenDoorSuccess01.wav"
+    play sound "./audio/key_found.wav"
     $ inv.has_key = True
     $ knows_key_location = True
     return
