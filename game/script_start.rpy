@@ -1,11 +1,11 @@
 ﻿# This starts at 0, and gets incremented each time the game loops back to the beginning.
 default loop_count = 0
 
-default inv.charge = False
-default inv.has_key = False
-default has_flatmate_left = False
-default visited_park_earlier = False
-default late_for_cafe = False
+default flag.is_phone_charged = False
+default flag.found_bedroom_key = False
+default flag.has_flatmate_left = False
+default flag.visited_park_earlier = False
+default flag.late_for_cafe = False
 default flag.saw_ufo_news = False
 
 default minigame.cards_per_turn = 2
@@ -20,7 +20,7 @@ label start:
     #jump start_debug
 
 label start_of_loop:
-    $ has_flatmate_left = False
+    $ flag.has_flatmate_left = False
 
     $ restart_loop()
 
@@ -36,7 +36,7 @@ label start_debug:
 
         "Call Rain":
             $ loop_count = 1
-            $ inv.charge = True
+            $ flag.is_phone_charged = True
             jump call_rain
 
         "UFO in park":

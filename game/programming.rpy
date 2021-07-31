@@ -2,10 +2,10 @@ init python:
     import math
 
     def restart_loop():
-        inv.charge = False
-        inv.has_key = False
-        visited_park_earlier = False
-        late_for_cafe = False
+        flag.is_phone_charged = False
+        flag.found_bedroom_key = False
+        flag.visited_park_earlier = False
+        flag.late_for_cafe = False
         flag.saw_ufo_news = False
 
     def is_key_here(location):

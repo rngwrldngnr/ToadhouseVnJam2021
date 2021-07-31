@@ -1,7 +1,7 @@
 label livingroom:
     scene bg livingroom with dissolve
 
-    if not has_flatmate_left:
+    if not flag.has_flatmate_left:
         jump livingroom_morning_talkn
     else:
         pass
@@ -175,5 +175,5 @@ label livingroom_ufo_news:
     "You’re neck-deep in the latest thread and have just reported a rude comment about the red-headed newscaster to the moderators when you realise a lot of time has passed. Whoops."
     "You were supposed to meet Farah for coffee. Time to go."
 
-    $ late_for_cafe = True
+    $ flag.late_for_cafe = True
     jump cafe

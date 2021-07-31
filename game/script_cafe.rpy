@@ -6,7 +6,7 @@ label cafe:
     "The café has a lot of earth tones with soft lighting and a large landscape painting on the back wall to bring a relaxing atmosphere to it."
     "It’s mostly quiet. A few other patrons are talking and you can hear the blender mixing some sort of icy drink."
 
-    if late_for_cafe:
+    if flag.late_for_cafe:
         show farah neutral right with easeinright
     else:
         show farah smile right with easeinright
@@ -16,7 +16,7 @@ label cafe:
     "You indicate nonverbally that you’ll grab your standard chai latte before you join them."
     "You avoid the croissants—this place hasn’t realised yet that there is such a thing as too flakey—but you go for a sandwich and quickly join your friend."
 
-    if late_for_cafe:
+    if flag.late_for_cafe:
         jump cafe_late
     else:
         jump cafe_on_time

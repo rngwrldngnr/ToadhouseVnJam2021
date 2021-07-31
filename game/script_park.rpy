@@ -25,7 +25,7 @@ label park_first_loop:
     jump restart_loop
 
 label park_early:
-    $ visited_park_earlier = True
+    $ flag.visited_park_earlier = True
 
     scene bg park
 
@@ -52,7 +52,7 @@ label park_early:
     "Finally, another sound hits your ears. A soft hum, growing steadily louder, until it stops."
     "Whatever was here, it’s gone now. Maybe it’ll come back later."
     "Speaking of later, you are definitely late for your meetup with Farah."
-    $ late_for_cafe = True
+    $ flag.late_for_cafe = True
     "You put the weird noise out of your mind for now. Time to head to the café."
 
     menu:
@@ -65,7 +65,7 @@ label walk_in_the_park:
     if loop_count == 0:
         jump park_first_loop
 
-    if visited_park_earlier:
+    if flag.visited_park_earlier:
         "The familiar surroundings of the park will help you think about how to resolve your conflict with Rain."
         "Everything’s still there. Grass, trees, duckless pond, bench, UFO."
         scene bg park ufo with dissolve

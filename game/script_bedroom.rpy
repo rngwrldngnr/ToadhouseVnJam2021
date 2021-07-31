@@ -43,10 +43,10 @@ label lay_around_waiting_charge:
     "You get back in bed and spend another 45 minutes staring at your dusty ceiling fan."
     "You should really buy one of those dusters on a stick."
     "As you lie there, the front door slams, and some of the dust comes fluttering down."
-    $ has_flatmate_left = True
+    $ flag.has_flatmate_left = True
     "Your phone isn’t fully charged, but it will be useful in an emergency."
     "If you don’t leave now, you will definitely be late. Time to get up."
-    $ inv.charge = True
+    $ flag.is_phone_charged = True
     jump explore_your_room
 
 # Note: -1 means the location will be set to the last place checked on the first loop.
@@ -81,7 +81,7 @@ label explore_your_room:
         "The small potted plant.":
             call check_potted_plant from _call_check_potted_plant
 
-        "The outside of the bedroom." if inv.has_key:
+        "The outside of the bedroom." if flag.found_bedroom_key:
             jump livingroom
 
     jump check_bedroom
@@ -139,13 +139,13 @@ label check_potted_plant:
 label bedroom_on_key_search:
     $ key_look_count = key_look_count + 1
 
-    if key_look_count == 3 and not has_flatmate_left:
+    if key_look_count == 3 and not flag.has_flatmate_left:
         "Outside your room, the front door slams. Sounds like your flatmate has left for the day."
-        $ has_flatmate_left = True
+        $ flag.has_flatmate_left = True
 
     return
 
 label bedroom_on_key_found:
     play sound "./audio/key_found.wav"
-    $ inv.has_key = True
+    $ flag.found_bedroom_key = True
     return
