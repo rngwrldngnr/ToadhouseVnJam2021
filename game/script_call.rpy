@@ -20,7 +20,7 @@ label call_rain_no_phone:
     "Hold on. Did you forget to charge your phone?"
     "Shit. Well, that ruins your mood entirely."
 
-    hide rain with easeoutbuttom
+    hide rain with easeoutbottom
 
     "Clearly, this is not the time to talk things out."
     "You’ll just have to see if Rain has calmed down a bit by the time she gets home."
