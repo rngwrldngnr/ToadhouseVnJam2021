@@ -2,7 +2,9 @@ label park_first_loop:
     scene bg park
 
     "You get to the park and look for a quiet place to sit down, but it’s not as peaceful as usual."
-    show park crowd at left
+
+    show park crowd at left with easeinleft
+
     "A small group of people is trampling the freshly-mown grass."
     "They seem an excitable bunch. A lot of hands are being waved around."
     "Some of those hands are just being used to gesture emphatically, but others are holding some kind of equipment."
@@ -10,13 +12,13 @@ label park_first_loop:
     "You met some of them at a recent UFOrum meeting!"
     "You’re trying to remember their names—you’re confident at least one of them is a Cecil—when you hear a voice behind you."
 
-    show alex shadow at right
+    show alex shadow at right with easeinright
 
     AlienShadow "This interference is unacceptable."
 
     "You turn around to see who’s speaking, but everything starts going black."
 
-    scene black
+    scene black with dissolve
 
     AlienShadow "We need to be more careful next time. Try again."
 
@@ -93,12 +95,15 @@ label walk_in_the_park:
 
             "I’ll let Rain cool off a bit.":
                 jump end_3
+
             "We need to talk this out right now.":
                 jump end_2
 
     else:
         "It’s unassuming, but with a double take you realise…"
+
         scene bg park ufo with dissolve  # TODO: See if we can do this without hiding the text?
+
         extend " wait, is that a UFO?!"
         "So the papers weren’t lying!"
         "It’s unlike any UFO you’ve ever seen. The movies don’t do it justice."
