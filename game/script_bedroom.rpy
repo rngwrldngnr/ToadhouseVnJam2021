@@ -1,7 +1,7 @@
 default key_look_count = 0
 
 label bedroom_start:
-    scene bg bedroom
+    scene bg bedroom with fade
 
     "A bright light wakes you up. For half a second, you’re disoriented."
     "You were having a very realistic dream, so it takes a moment for your surroundings to sink in."

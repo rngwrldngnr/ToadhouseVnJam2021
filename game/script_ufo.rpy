@@ -5,7 +5,7 @@ label ufo_start:
     "You’re not sure what to expect, but you’ve seen enough horror movies to get a few ideas."
     "From the looks of it, the walls are lined with screens, buttons, and keyboards and something that almost comically looks like a video game joystick."
 
-    show alex neutral left at center with dissolve
+    show alex neutral left with easeinleft
 
     "And is that a real alien?!"
 
